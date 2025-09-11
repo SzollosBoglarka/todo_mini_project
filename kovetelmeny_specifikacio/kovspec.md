@@ -1,5 +1,11 @@
 # TODO feladatkezelő rendszer
 
+## 1. Áttekintés
+
+A **webes alkalmazás**unk célja egy olyan felület biztosítása, melyben a felhasználó felveheti és nyomon követheti teendőit. Az alkalmazás webes felületen érhető el, ugyanakkor reszponzív tulajdonságai lehetővé teszik a mobilon való kezelhetőséget egyaránt.
+
+A rendszer támogatja a feladatok létrehozását, szerkesztését, törlését és státuszuk módosítását, valamint lehetőséget biztosít a prioritások és határidők megadására. A feladatok kereshetők, rendezhetők és áttekinthetően jelennek meg.
+
 ## 2. Jelenlegi helyzet
 
 Az embereknek mindennapjaik során számos feladatot kell, hogy elvégezzenek. Mind a munka, a tanulás és a magánélet kapcsán felmerülnek fontos határidők, elvégzendő teendők. Ezeket sokan rendszertelenül tartjuk számon: egyes teendőket cetlikre írunk fel, másokat a telefonba jegyzünk fel, néhányat pedig csak próbálunk fejben tartani.
@@ -7,6 +13,42 @@ Az embereknek mindennapjaik során számos feladatot kell, hogy elvégezzenek. M
 Ez nem a legoptimálisabb, hiszen így könnyen feledésbe merülhetnek fontos dolgok, a papírra felírt információk akár el is veszhetnek. Ezen felül sürgető határidők mellett nehéz meghatározni, hogy melyik teendővel kezdjünk, melyiket lenne a legfontosabb megcsinálni. Valamint nem mindig egyértelmű, hogy egy adott feladat elvégzése elkezdődött-e már, vagy befejeződött. Emellett az is előfordul, hogy emlékszünk egy feladatra, de nem találjuk, hová jegyeztük fel.
 
 Ezek miatt a feladatok kezelése sokszor átláthatatlan és stresszes. Egy egységes rendszer, amely támogatja a feladatok rögzítését, fontossági sorrend szerinti kategorizálását és kereshetőségét, nagymértékben megkönnyítené a mindennapokat.
+
+## 3. Vágyálom rendszer
+
+Célunk egy **könnyen kezelhető és felhasználóbarát** feladatkezelő eszköz fejlesztése, amely támogatja a **teendők összegyűjtését, rendszerezését és nyomon követés**ét a lehető legoptimálisabb módon. Az alkalmazás lehetőséget biztosít arra, hogy a felhasználó a feladatokat különböző tulajdonságokkal lássa el, mint például határidő, elvégzésre szánt idő, prioritási szint, kategória vagy részletes leírás. Ezek a kiegészítő információk segítenek a pontos ütemterv kialakításában, így a felhasználó elkerülheti a kapkodást és az átgondolatlan sorrendet, amely gyakran jellemzi a hagyományos, papírra vagy telefonba írt feladatlistákat.
+
+A rendszer egyik fő erőssége a **könnyű használhatóság**: nincs szükség regisztrációra, elegendő egy becenév megadása, amely alapján a felhasználót az alkalmazás később megszólítja. A felület kialakításánál a **letisztultság és az egyértelműség** az elsődleges szempont, így minden funkció jól látható és könnyen elérhető. A felhasználói élményt tovább fokozza a **reszponzív megjelenés**, amely biztosítja, hogy a program személyi számítógépen, laptopon, tableten és mobiltelefonon egyaránt kényelmesen használható legyen.
+
+A feladatok megjelenítése átlátható listában történik, a részletek külön területen vagy modal pop-up-ban jelennek meg úgy, hogy közben a teljes lista látható marad. A feladatok sorrendje igény szerint módosítható, a beépített kereső pedig jelentősen megkönnyíti a nagyobb mennyiségű teendő kezelését. A **vizuális átláthatóság**ot a gondosan megválasztott színek, ikonok és tipográfia biztosítják, a prioritási szintek pedig különböző színkódokkal kiemelve segítik a felhasználót a fontosabb feladatok gyors felismerésében.
+
+Mivel az alkalmazás **webes felület**en érhető el, a felhasználónak nincs szüksége papíralapú jegyzetekre vagy külön telepíthető programokra. Így a feladatlista mindig elérhető marad, nem felejthető otthon és nem veszhet el, a **böngésző által biztosított tárolás**nak köszönhetően pedig az adatok minden oldalfrissítéskor megmaradnak.
+
+## 4. Funkcionális követelmények
+
+- **Feladatkezelés (CRUD műveletek)**
+  - Új feladat létrehozása *(id, cím, feladat leírása, kategória, határidő, státusz, prioritási szint)*.
+  - Feladat szerkesztése
+  - Feladat törlése.
+  - Feladat státuszának változtatása *(pl. új / folyamatban / kész)*.
+- **Kategorizálás és priorizálás**
+  - Feladatok hozzárendelhetők kategóriákhoz-
+  - Prioritási szintek megadása *(pl. alacsony, közepes, magas)*.
+  - Prioritási szintek vizuálisan elkülönülnek *(színkódokkal)*.
+- **Időkezelés**
+  - Határidő megadásának lehetősége (dátumválasztóval).
+  - *Későbbi bővítés lehetősége: feladatok idő szerinti rendezése.*
+- **Feladatok megjelenítése és keresése**
+  - Teendők listázása reszponzív elrendezésben.
+  - Keresőmező a feladatok között.
+  - *Későbbi fejlesztési lehetőség: Feladatok sorrendjének kézi átrendezése (drag & drop)*
+  - Részletek megnyitása modal ablakban, miközben a lista látható marad.
+- **Felhasználói élményt javító funkciók**
+  - Mobil- és asztali nézet támogatása *(reszponzív design)*.
+  - Intuitív, áttekinthető felület *(átlátható színek, ikonok, tipográfia)*.
+- **Tárolás és adatkezelés**
+  - Alapértelmezett tárolás: böngésző által biztosított tároló *(localStorage)*.
+  - A felhasználó teendői és neve automatikusan betöltődnek újraindításkor.
 
 ## 5. A rendszerre vonatkozó szabályok
 
