@@ -1,4 +1,4 @@
-# TODO feladatkezelő rendszer
+# Követelmény specifikáció
 
 ## 1. Áttekintés
 
