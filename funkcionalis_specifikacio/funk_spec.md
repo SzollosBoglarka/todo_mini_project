@@ -59,6 +59,14 @@ Esetünkben az egyetlen szereplő maga a ***felhasználó***.
 
 ## 9. Képernyőtervek
 
+### 9.1 Kezdő oldal
+![TODO feladatkezelő rendszer - Kezdő oldal](./src/kezdo_oldal.png)
+
+### 9.2 Feladat kezelő felület
+![TODO feladatkezelő rendszer - Feladat kezelő felület](./src/feladat_kezelo_felulet.png)
+
+### 9.3 Kijelentkezési oldal
+![TODO feladatkezelő rendszer - Kijelentkezési oldal](./src/kijelentkezesi_oldal.png)
 
 ## 10. Forgatókönyvek
 
