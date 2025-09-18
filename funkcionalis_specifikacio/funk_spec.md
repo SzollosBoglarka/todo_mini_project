@@ -96,3 +96,8 @@ Esetünkben az egyetlen szereplő maga a ***felhasználó***.
 
 ## 10. Forgatókönyvek
 
+Szétszort Szilveszter mindennapjait kaotikus cetlik és elfelejtett teendők uralják, míg Pontos Panna mindig szervezett és precíz. Egy hosszúra nyúlt reggel után véletlenül összefutnak a parkban, ahol Panna bemutatja neki a PlanBerry nevű egyszerű, átlátható ToDo alkalmazást, amelyben könnyedén lehet feladatokat létrehozni, szerkeszteni, kategorizálni, határidőt és prioritást adni hozzájuk.
+
+Szilveszter ráébred, hogy a digitális lista sokkal kezelhetőbb, mint a cetlik cunamija. Az app segítségével Szilveszter lassan úrrá lesz a káoszon, és végül Szervezett Szilveszterré válik.
+
+[PlanBerry - UserStory](./user_stories/userStory1.md)
