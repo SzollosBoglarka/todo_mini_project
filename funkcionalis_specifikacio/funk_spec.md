@@ -49,6 +49,16 @@ A folyamat széttagolt, hiányzik belőle a rendszerezettség, így könnyen át
 
 ## 5. Igényelt üzleti folyamatok
 
+### 5.1 Igényelt üzleti folyamatok leírása
+A megrendelő azt szeretné, hogy a felhasználóknak a **kezdő oldalon** csak egy **becenevet** kelljen **megadnia**, amelyet a rendszer a későbbiekben a megszólítás során használ. A kezdő oldalról egy **tovább gombbal** lehessen továbblépni a feladatkezelő felületre.
+
+A **feladatkezelő felületen** a felhasználók **láthassák a meglévő feladataikat**, ezeket tudják **módosítani** és **törölni**, valamint legyen lehetőségük **új feladatokat létrehozni**. A megrendelő igénye, hogy a feladatokhoz **kategóriát**, **prioritást** és **státuszt** lehessen hozzárendelni, illetve ezeket később módosítani is lehessen. További elvárás, hogy a feladatok között könnyű legyen eligazodni, ezért a rendszer biztosítson **keresési és rendezési lehetőségeket**.
+
+A feladatkezelő felületről **kijelentkezés** gombbal lehessen kijelentkezni, amely egy **kijelentkezési oldalra** vezet, ahonnan **vissza** lehet térni a kezdő oldalra.
+
+### 5.2 Igényelt üzleti folyamatok diagram
+![TODO feladatkezelő rendszer - Igényelt üzleti folyamat diagram](./src/uzleti_folyamatok.png)
+
 ## 7. Használati esetek
 
 ### 7.1 Aktorok (szereplők) meghatározása
