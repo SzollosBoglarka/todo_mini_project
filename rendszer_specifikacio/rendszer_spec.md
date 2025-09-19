@@ -1,5 +1,9 @@
 # Rendszer specifikáció
 
+## 1. A rendszer célja
+
+A mindennapi életben számtalan teendőnk akad, amelyeket sokszor rendszertelenül próbálunk követni: egyes feladatokat cetlikre írunk, másokat a telefonba jegyzünk fel, néhányat pedig csak próbálunk fejben tartani. Ezek azonban könnyen elveszhetnek, átláthatatlanná válhatnak, és előfordulhat, hogy fontos dolgok feledésbe merülnek. A rendszerünk célja, hogy egy átlátható, egyszerűen kezelhető felületet biztosítson a felhasználóknak, ahol felvehetik, nyomon követhetik, módosíthatják és törölhetik teendőiket. A rendszer lehetőséget nyújt kategóriák, prioritások és határidők megadására, így mindenki a saját igényei szerint rendszerezheti feladatait. A keresési és rendezési funkciók segítségével a felhasználók könnyedén eligazodhatnak a feladatok között. Továbbá a prioritásokhoz különböző színkódok tartoznak, amelyek még áttekinthetőbbé teszik a felületet. Az alkalmazás webes felületen érhető el reszponzív kialakítással, így számítógépről, tabletről és mobilról egyaránt kényelmesen használható.
+
 ## 2. Projektterv
 
 ### 2.1  Projektszerepkörök, felelősségek
@@ -27,6 +31,35 @@
 | Szerveroldal létrehozása       | localStorage alapú adatkezelés, CRUD függvények implementálása JavaScript-tel | 2 | 12 | 0 |
 | Kinézet létrehozása             | Frontend fejlesztés, HTML/CSS, reszponzív felület, modal ablakok | 2 | 12 | 0 |
 | Tesztek megírása és futtatása  | Funkcionális teszt, reszponzív teszt, hibajavítás     | 3         | 4                         | 0                   |
+
+## 3. Üzleti folyamatok modellje
+
+### 3.1 Üzleti szereplők
+* **Felhasználó**: a rendszert használja
+* **Rendszer**: a felhasználó műveleteit kezeli, adatokat tárol és jelenít meg
+* **Megrendelő**: igényeket határoz meg
+
+### 3.2 Üzleti folyamatok
+1. **Becenév megadása**
+    * A felhasználó megadja a becenevét
+    * Rendszer eltárolja a becenevet
+2. **„Tovább” gomb megnyomása**
+    * Feladatkezelőre irányít
+3. **Feladatok kezelése**
+    * Feladatok listázása
+    * Új feladat létrehozása
+    * Meglévő feladat módosítása és törlése
+    * Keresés és rendezés a feladatok között
+4. **Kijelentkezés gomb megnyomása**
+    * Felhasználó kijelentkezik
+    * Kijelentkezési oldalra irányít
+5. **„Vissza” gomb megnyomása**
+    * Kezdő oldalra irányít
+
+### 3.3 Üzleti entitások
+* **Becenév**: a felhasználó azonosítására szolgál
+* **Feladat**: központi entitás, amit a felhasználó kezelhet
+    * attribútumai: *id*, *cím*, *feladatleírás*, *kategória*, *határidő*, *prioritás*, *státusz*
 
 ## 6. Fizikai környezet
 
