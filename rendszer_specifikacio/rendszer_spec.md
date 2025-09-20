@@ -61,6 +61,25 @@ A mindennapi életben számtalan teendőnk akad, amelyeket sokszor rendszertelen
 * **Feladat**: központi entitás, amit a felhasználó kezelhet
     * attribútumai: *id*, *cím*, *feladatleírás*, *kategória*, *határidő*, *prioritás*, *státusz*
 
+## 4. Követelmények
+
+### 4.2 Nemfunkcionális követelmények
+- **Teljesítmény**
+	- Az alkalmazás oldalainak betöltési ideje átlagos hálózati körülmények között legfeljebb 2 másodperc.
+	- A felhasználói műveletekre (feladat létrehozás, módosítás, törlés) a rendszernek 1 másodpercen belül kell reagálnia.
+- **Megbízhatóság és rendelkezésre állás**
+	- Az alkalmazás böngészőfüggetlenül működik: támogatott böngészők: Chrome, Firefox, Edge, Opera.
+	- A localStorage-ben tárolt adatok nem veszhetnek el oldalfrissítés vagy böngésző újranyitás után.
+- **Biztonság**
+	- A felhasználói adatokhoz csak az adott felhasználó férhet hozzá a saját böngészőjén belül.
+- **Felhasználhatóság**
+	- A felület reszponzív kialakítású, így mobilon, tableten és asztali gépen egyaránt kényelmesen használható.
+	- A felhasználói felület **magyar nyelvű** és konzisztens elnevezéseket használ.
+- **Karbantarthatóság és bővíthetőség**
+	- A forráskód **moduláris felépítésű**, így könnyen bővíthető új funkciókkal.
+	- Verziókövetésre GitHub használatos, minden módosítás commitokban és branchekben követhető.
+	- A dokumentáció naprakész, a fejlesztők számára egyértelmű iránymutatást ad.
+
 ## 5. Funkcionális terv
 
 ### 5.1 Rendszerszereplők
@@ -228,3 +247,23 @@ A tesztelés célja, hogy biztosítsa az alkalmazás funkciói a specifikáción
 | T-06      | Keresés funkció         | 1. Keresőmezőbe írni a feladat címét                                                         | Csak a keresési feltételnek megfelelő feladatok jelennek meg.                                                                 |
 | T-07      | Részletek megjelenítése | 1. Kattintás a feladatmezőre                                                                 | Részletek megjelenése modal ablakban, miközben a lista látható marad                                                          |
 | T-08      | Reszponzív megjelenés   | 1. Alkalmazás megnyitása mobilon/tableten/PC-n                                               | Az UI alkalmazkodik a képernyő méretéhez, minden elem jól olvasható és elérhető.                                              |
+
+## 11. Telepítési terv
+### 11.1 Telepítési környezet
+- **Célplatform:** webböngésző *(Chrome, Firefox, Edge, Opera)*
+- **Futtatási követelmények:** internetkapcsolat
+- **Kliensoldali tárolás:** localStorage
+- **Operációs rendszer:** platformfüggetlen *(Windows, macOS, Linux, Android, iOS)*
+
+### 11.2 Előkészületek
+- A felhasználónak rendelkeznie kell legalább egy támogatott böngészővel.
+- Internetkapcsolat szükséges a projektfájlok első letöltéséhez.
+- A letöltött projekt ZIP fájlát ki kell csomagolni a számítógépen egy tetszőleges mappába.
+- A mappában található `index.html` fájl biztosítja az alkalmazás indítását.
+
+### 11.3 Telepítési lépések
+- Nyisd meg a projekt GitHub oldalát, és töltsd le a forráskódot ZIP fájlként.
+- Csomagold ki a letöltött ZIP fájlt egy általad választott helyre.
+- Keresd meg a kicsomagolt mappában az **`index.html`** fájlt.
+- Dupla kattintással nyisd meg az `index.html` fájlt a böngésződben.
+- A kezdőképernyőn add meg a becenevedet, majd kattints a *Tovább* gombra – ezzel az alkalmazás telepítése és indítása megtörtént.
