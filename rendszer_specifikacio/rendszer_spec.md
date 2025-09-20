@@ -61,6 +61,69 @@ A mindennapi életben számtalan teendőnk akad, amelyeket sokszor rendszertelen
 * **Feladat**: központi entitás, amit a felhasználó kezelhet
     * attribútumai: *id*, *cím*, *feladatleírás*, *kategória*, *határidő*, *prioritás*, *státusz*
 
+## 5. Funkcionális terv
+
+### 5.1 Rendszerszereplők
+Esetünkben az egyetlen rendszerszereplő maga a ***felhasználó***.
+
+### 5.2 Rendszerhasználati esetek és lefutásaik
+1. Bejelentkezés (becenévvel)
+    * Lefutás: Kezdő oldal → üzenet + becenév megadása (nincs jelszó) + „Tovább” gomb → Feladatkezelő oldal
+
+2. Új feladat létrehozása
+    * Lefutás: „Új feladat” gomb → modal ablak → adatok kitöltése (cím, leírás, kategória, határidő, prioritás, státusz) → feladat megjelenik a listában
+
+3. Feladat módosítása
+    * Lefutás: Feladat melletti „Módosítás” gomb → modal ablak → mezők módosítása (cím, leírás, kategória, határidő, prioritás, státusz) → feladat módosul
+
+4. Feladat törlése
+    * Lefutás: Feladat melletti „Törlés” gomb → törlés megerősítése → feladat eltűnik a listából
+
+5. Feladatok keresése
+    * Lefutás: Keresőmezőbe beírás → szűrt lista jelenik meg
+
+6. Kijelentkezés
+    * Lefutás: „Kijelentkezés” gomb → Kijelentkezési oldal → üzenet + „Vissza” gomb → Kezdő oldal
+
+### 5.3 Határosztályok
+* **Kezdő oldal**
+    * Üdvözlő üzenet
+    * Becenév input mező
+    * „Tovább” gomb
+* **Feladatkezelő oldal**
+    * Üdvözlő üzenet
+    * Feladatok listája
+        * (*Feladatonként ismétlődő elemek*) „Módosítás” és „Törlés” gomb
+    * Feladatok státusz szerinti összefoglaló (Új / Folyamatban / Kész számlálóval)
+    * „Új feladat” gomb
+    * Keresés mező
+    * „Kijelentkezés” gomb
+* **Modal ablak**
+    * Cím input mező
+    * Feladatleírás input mező
+    * Kategória input mező
+    * Határidő input mező
+    * Prioritás input mező
+    * Státusz input mező
+* **Kijelentkezési oldal**
+    * Elköszönő üzenet
+    * „Vissza” gomb
+
+### 5.4  Menü-hierarchiák
+
+![PlanBerry - Menü-hierarchia](src/menu_hierarchia.png)
+
+### 5.5 Képernyőtervek
+### Kezdő oldal
+![PlanBerry  - Kezdő oldal](funkcionalis_specifikacio/src/kezdo_oldal.png)
+
+### Feladatkezelő oldal
+![PlanBerry  - Feladat kezelő felület](funkcionalis_specifikacio/src/feladat_kezelo_felulet.png)
+
+### Kijelentkezési oldal
+![PlanBerry  - Kijelentkezési oldal](funkcionalis_specifikacio/src/kijelentkezesi_oldal.png)
+
+
 ## 6. Fizikai környezet
 
 Az alkalmazás webes felületre készül, reszponzív kialakítással, így mobil eszközökön is kényelmesen használható. A hálózaton tűzfal üzemel, de minden szükséges port engedélyezett a működéshez. A projekthez nem tartoznak megvásárolt komponensek vagy fizetős szoftverek.
