@@ -1,4 +1,4 @@
-# Rendszer specifikáció
+# Rendszerspecifikáció
 
 ## 1. A rendszer célja
 
@@ -115,13 +115,13 @@ Esetünkben az egyetlen rendszerszereplő maga a ***felhasználó***.
 
 ### 5.5 Képernyőtervek
 ### Kezdő oldal
-![PlanBerry  - Kezdő oldal](funkcionalis_specifikacio/src/kezdo_oldal.png)
+![PlanBerry  - Kezdő oldal](src/kijelentkezesi_oldal.png)
 
 ### Feladatkezelő oldal
-![PlanBerry  - Feladat kezelő felület](funkcionalis_specifikacio/src/feladat_kezelo_felulet.png)
+![PlanBerry  - Feladat kezelő felület](src/feladat_kezelo_felulet.png)
 
 ### Kijelentkezési oldal
-![PlanBerry  - Kijelentkezési oldal](funkcionalis_specifikacio/src/kijelentkezesi_oldal.png)
+![PlanBerry  - Kijelentkezési oldal](src/kijelentkezesi_oldal.png)
 
 
 ## 6. Fizikai környezet
@@ -143,7 +143,7 @@ Az alkalmazás webes felületre készül, reszponzív kialakítással, így mobi
 | Git/GitHub                      | Verziókezelés, kódmegosztás, csapatmunka              | Commit-ok, branch-ek és pull request-ek kezelése, projektek nyomon követése                                                       |
 | Trello                          | Projekt- és feladatmenedzsment                        | Kanban tábla a sprintek és taskok vizuális követéséhez, prioritások kezelése, agile tool-ok használata (story points, wip number) |
 
-## 9. Adatmodell terv
+## 8. Adatmodell terv
 
 A rendszer **adatbázis helyett a böngésző által biztosított localStorage-t** használja az adatok tárolására. A localStorage **kulcs-érték párok**at tárol, melyek JSON formátumban szervezhetők, így a felhasználói adatok és a feladatok megőrizhetők az oldalfrissítés után is.
 
@@ -169,7 +169,7 @@ A rendszer **adatbázis helyett a böngésző által biztosított localStorage-t
   ]
 }
 ```
-### 9.1 Mezők jelentése
+### 8.1 Mezők jelentése
 
 * `users`: a felhasználókat tartalmazó tömb.
   * `id`: a felhasználó egyedi azonosítója.
@@ -183,6 +183,6 @@ A rendszer **adatbázis helyett a böngésző által biztosított localStorage-t
     * `priority`: a feladat fontossága *(pl. „alacsony”, „közepes”, „magas”)*.
     * `status`: a feladat állapota *(pl. „új”, „folyamatban”, „kész”)*.
 
-### 9.2  **Minta**
+### 8.2  **Minta**
 
 ![PlanBerry - Adatmodell minta adatokkal](src/adattarolas_minta.png)
