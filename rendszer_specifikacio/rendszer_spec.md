@@ -267,3 +267,14 @@ A tesztelés célja, hogy biztosítsa az alkalmazás funkciói a specifikáción
 - Keresd meg a kicsomagolt mappában az **`index.html`** fájlt.
 - Dupla kattintással nyisd meg az `index.html` fájlt a böngésződben.
 - A kezdőképernyőn add meg a becenevedet, majd kattints a *Tovább* gombra – ezzel az alkalmazás telepítése és indítása megtörtént.
+
+## 12. Karbantartási terv
+
+Az alkalmazás folyamatos és megbízható működésének biztosítása érdekében szükséges a rendszer rendszeres és megfelelő karbantartása. Mivel az adatok a böngésző LocalStorage területén tárolódnak, nincs szükség külön szerver- vagy adatbázis-karbantartásra. Azonban továbbra is figyelmet kell fordítani a hibák kijavítására, a felhasználói élmény javítására és a webes technológiák fejlődéséből adódó lehetőségek integrálására. Emelett az új felhasználói igényeket is ki kell elégíteni, új funkciók beépítésével.
+
+| Karbantartás típusa | Karbantartási tevékenység a rendszerben |
+|----------------------|-------------------------|
+| **Corrective Maintenance** (Hibajavító) | A felhasználók által jelzett hibák kijavítása. |
+| **Adaptive Maintenance** (Alkalmazkodó) | Az alkalmazás kompatibilitásának fenntartása különböző böngészők és verziók között. A felület naprakészen tartása a webes szabványok változásainak megfelelően. |
+| **Perfective Maintenance** (Tökéletesítő) | Új funkciók bevezetése. Felhasználói élmény javítása. |
+| **Preventive Maintenance** (Megelőző) | Kódellenőrzés és refaktorálás. Biztonsági szempontok ellenőrzése. |
