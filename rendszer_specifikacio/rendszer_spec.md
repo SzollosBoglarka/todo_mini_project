@@ -186,3 +186,12 @@ A rendszer **adatbázis helyett a böngésző által biztosított localStorage-t
 ### 8.2  **Minta**
 
 ![PlanBerry - Adatmodell minta adatokkal](src/adattarolas_minta.png)
+
+### 8.3 Osztálydiagram
+
+Az alábbi osztálydiagram szemlélteti azokat a logikai kapcsolatokat, amelyek a felhasználók és a feladataik között fennállnak. A diagram segítségével vizuálisan is átlátható, hogyan épül fel a JSON-alapú adatstruktúra.
+![PlanBerry - Osztálydiagram](src/osztalydiagram.png)
+- A **User** entitás rendelkezik egyedi azonosítóval és becenévvel.
+- Minden felhasználóhoz tartozhat **0 vagy több Task** (feladat).
+- A **Task** entitás a feladatok adatait tartalmazza: cím, leírás, kategória, határidő, prioritás és státusz.
+- A diagramon szereplő metódusok (_updateTitle()_, _delete()_ stb.) szemléltetik, milyen műveletek végezhetők el az adatokon, de ezek nem jelennek meg tényleges objektumorientált metódusként, hanem a rendszer funkcionális működését írják le.
