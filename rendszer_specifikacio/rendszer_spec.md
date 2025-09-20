@@ -63,6 +63,33 @@ A mindennapi életben számtalan teendőnk akad, amelyeket sokszor rendszertelen
 
 ## 4. Követelmények
 
+### 4.1 Funkcionális követelmények
+
+- **Feladatkezelés (CRUD műveletek)**
+    - Új feladat létrehozása *(id, cím, feladat leírása, kategória, határidő, státusz, prioritási szint)*.
+    - Feladat szerkesztése
+    - Feladat törlése.
+    - Feladat státuszának változtatása *(pl. új / folyamatban / kész)*.
+- **Kategorizálás és priorizálás**
+    - Feladatok hozzárendelhetők kategóriákhoz-
+    - Prioritási szintek megadása *(pl. alacsony, közepes, magas)*.
+    - Prioritási szintek vizuálisan elkülönülnek *(színkódokkal)*.
+- **Időkezelés**
+    - Határidő megadásának lehetősége (dátumválasztóval).
+    - *Későbbi bővítés lehetősége: feladatok idő szerinti rendezése.*
+- **Feladatok megjelenítése és keresése**
+    - Teendők listázása reszponzív elrendezésben.
+    - Keresőmező a feladatok között.
+    - *Későbbi fejlesztési lehetőség: Feladatok sorrendjének kézi átrendezése (drag & drop)*
+    - Részletek megnyitása modal ablakban, miközben a lista látható marad.
+- **Felhasználói élményt javító funkciók**
+    - Mobil- és asztali nézet támogatása *(reszponzív design)*.
+    - Intuitív, áttekinthető felület *(átlátható színek, ikonok, tipográfia)*.
+- **Tárolás és adatkezelés**
+    - Alapértelmezett tárolás: böngésző által biztosított tároló *(localStorage)*.
+    - A felhasználó teendői és neve automatikusan betöltődnek újraindításkor.
+
+
 ### 4.2 Nemfunkcionális követelmények
 - **Teljesítmény**
 	- Az alkalmazás oldalainak betöltési ideje átlagos hálózati körülmények között legfeljebb 2 másodperc.
@@ -142,7 +169,6 @@ Esetünkben az egyetlen rendszerszereplő maga a ***felhasználó***.
 ### Kijelentkezési oldal
 ![PlanBerry  - Kijelentkezési oldal](src/kijelentkezesi_oldal.png)
 
-
 ## 6. Fizikai környezet
 
 Az alkalmazás webes felületre készül, reszponzív kialakítással, így mobil eszközökön is kényelmesen használható. A hálózaton tűzfal üzemel, de minden szükséges port engedélyezett a működéshez. A projekthez nem tartoznak megvásárolt komponensek vagy fizetős szoftverek.
@@ -161,6 +187,35 @@ Az alkalmazás webes felületre készül, reszponzív kialakítással, így mobi
 | Chrome / Firefox / Edge / Opera | Funkcionális tesztelés, reszponzív teszt, hibakeresés | Fejlesztői eszközök (DevTools) használatával kódprofilozás, hibakeresés és performance teszt                                      |
 | Git/GitHub                      | Verziókezelés, kódmegosztás, csapatmunka              | Commit-ok, branch-ek és pull request-ek kezelése, projektek nyomon követése                                                       |
 | Trello                          | Projekt- és feladatmenedzsment                        | Kanban tábla a sprintek és taskok vizuális követéséhez, prioritások kezelése, agile tool-ok használata (story points, wip number) |
+
+## 7. Architekturális terv
+
+### 7.1 Komponensek
+
+* **Frontend (UI réteg):** HTML, CSS, Bootstrap – a felhasználói felület, ahol a feladatokat és adatokat kezelik.
+* **Logikai réteg (JavaScript):** a feladatok létrehozása, módosítása, törlése, szűrése, rendezése.
+* **Adatkezelés (LocalStorage):** a böngésző által biztosított tároló a felhasználók és feladatok adataihoz.
+
+### 7.2 Kapcsolatok és adatáramlás
+
+* A felhasználó a böngészőben interakcióba lép a UI-val.
+* A JavaScript feldolgozza a bemenetet, majd CRUD műveleteket hajt végre a localStorage-on.
+* Az eredmény visszakerül a felületre, frissítve a nézetet.
+
+### 7.3 Architekturális ábra
+
+```
+[Felhasználó] 
+     │
+     ▼
+[UI réteg: HTML + CSS + Bootstrap] 
+     │
+     ▼
+[Logikai réteg: JavaScript] 
+     │
+     ▼
+[Adatkezelés: LocalStorage]
+```
 
 ## 8. Adatmodell terv
 
@@ -248,20 +303,20 @@ A tesztelés célja, hogy biztosítsa az alkalmazás funkciói a specifikáción
 | T-07      | Részletek megjelenítése | 1. Kattintás a feladatmezőre                                                                 | Részletek megjelenése modal ablakban, miközben a lista látható marad                                                          |
 | T-08      | Reszponzív megjelenés   | 1. Alkalmazás megnyitása mobilon/tableten/PC-n                                               | Az UI alkalmazkodik a képernyő méretéhez, minden elem jól olvasható és elérhető.                                              |
 
-## 11. Telepítési terv
-### 11.1 Telepítési környezet
+## 11. Telepítési / Indítási terv
+### 11.1 Futtatási környezet
 - **Célplatform:** webböngésző *(Chrome, Firefox, Edge, Opera)*
 - **Futtatási követelmények:** internetkapcsolat
 - **Kliensoldali tárolás:** localStorage
 - **Operációs rendszer:** platformfüggetlen *(Windows, macOS, Linux, Android, iOS)*
 
-### 11.2 Előkészületek
+### 11.2 Szükséges előkészületek
 - A felhasználónak rendelkeznie kell legalább egy támogatott böngészővel.
 - Internetkapcsolat szükséges a projektfájlok első letöltéséhez.
 - A letöltött projekt ZIP fájlát ki kell csomagolni a számítógépen egy tetszőleges mappába.
 - A mappában található `index.html` fájl biztosítja az alkalmazás indítását.
 
-### 11.3 Telepítési lépések
+### 11.3 Indítási lépések
 - Nyisd meg a projekt GitHub oldalát, és töltsd le a forráskódot ZIP fájlként.
 - Csomagold ki a letöltött ZIP fájlt egy általad választott helyre.
 - Keresd meg a kicsomagolt mappában az **`index.html`** fájlt.
