@@ -190,8 +190,41 @@ A rendszer **adatbázis helyett a böngésző által biztosított localStorage-t
 ### 8.3 Osztálydiagram
 
 Az alábbi osztálydiagram szemlélteti azokat a logikai kapcsolatokat, amelyek a felhasználók és a feladataik között fennállnak. A diagram segítségével vizuálisan is átlátható, hogyan épül fel a JSON-alapú adatstruktúra.
+
 ![PlanBerry - Osztálydiagram](src/osztalydiagram.png)
 - A **User** entitás rendelkezik egyedi azonosítóval és becenévvel.
 - Minden felhasználóhoz tartozhat **0 vagy több Task** (feladat).
 - A **Task** entitás a feladatok adatait tartalmazza: cím, leírás, kategória, határidő, prioritás és státusz.
 - A diagramon szereplő metódusok (_updateTitle()_, _delete()_ stb.) szemléltetik, milyen műveletek végezhetők el az adatokon, de ezek nem jelennek meg tényleges objektumorientált metódusként, hanem a rendszer funkcionális működését írják le.
+
+## 10. Tesztterv
+
+### 10.1 Tesztelés célja
+A tesztelés célja, hogy biztosítsa az alkalmazás funkciói a specifikációnak megfelelően működjenek, a felhasználói élmény maximális legyen, a folyamatok gördülékenyek legyenek, és a rendszer teljesítse a funkcionális és nemfunkcionális követelményeket.
+
+### 10.2 Tesztelési környezet
+- **Platformok**: Windows, macOS, Android, iOS
+	- modern böngészők: Chrome, Firefox, Edge, Opera
+- **Tárolás**: localStorage
+- **Tesztelési eszközök**
+	- böngésző DevTools
+	- manuális tesztelés
+
+### 10.3 Tesztelési típusok
+- **Funkcionális teszt** - CRUD műveletek *(létrehozás, módosítás, törlés)*
+- **UI/UX teszt** - gombok, navigáció, reszponzivitás
+- **Nemfunkcionális teszt** - teljesítmény *(pl. betöltési idő)*, biztonság *(input validálás)*
+- **Kompatibilitási teszt** - több böngésző és eszköz
+
+### 10.4 Tesztesetek
+
+| Azonosító | Tesztleírás             | Lépések                                                                                      | Elvárt eredmény                                                                                                               |
+| --------- | ----------------------- | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| T-01      | Bejelentkezés           | 1. Név megadása<br>2. *Tovább* gomb                                                          | Betöltődik a feladatokat megjelenítő oldal, ahol a rendszer a megadott becenevet használja a felhasználóra való hivatkozáskor |
+| T-02      | Kijelentkezés           | 1. *Kijelentkezés* gomb                                                                      | Betöltődik a kijelentkezést jelző oldal                                                                                       |
+| T-03      | Feladat létrehozása     | 1. *Új feladat létrehozása* gomb<br>2. Cím és leírás megadása<br>3. *Mentés* gomb            | A feladat megjelenik a listában az összes megadott adattal.                                                                   |
+| T-04      | Feladat szerkesztése    | 1. Meglévő feladat szerkesztése: *Szerkesztés* gomb<br>2. Cím módosítása<br>3. *Mentés* gomb | A feladat címe frissül a listában.                                                                                            |
+| T-05      | Feladat törlése         | 1. Meglévő feladat törlése: *Törlés* gomb<br>2. *Megerősítés* gomb                           | A feladat eltűnik a listából, többé nem érhető el.                                                                            |
+| T-06      | Keresés funkció         | 1. Keresőmezőbe írni a feladat címét                                                         | Csak a keresési feltételnek megfelelő feladatok jelennek meg.                                                                 |
+| T-07      | Részletek megjelenítése | 1. Kattintás a feladatmezőre                                                                 | Részletek megjelenése modal ablakban, miközben a lista látható marad                                                          |
+| T-08      | Reszponzív megjelenés   | 1. Alkalmazás megnyitása mobilon/tableten/PC-n                                               | Az UI alkalmazkodik a képernyő méretéhez, minden elem jól olvasható és elérhető.                                              |
