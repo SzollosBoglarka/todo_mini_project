@@ -161,7 +161,7 @@ Esetünkben az egyetlen rendszerszereplő maga a ***felhasználó***.
 
 ### 5.5 Képernyőtervek
 ### Kezdő oldal
-![PlanBerry  - Kezdő oldal](src/kijelentkezesi_oldal.png)
+![PlanBerry  - Kezdő oldal](src/kezdo_oldal.png)
 
 ### Feladatkezelő oldal
 ![PlanBerry  - Feladat kezelő felület](src/feladat_kezelo_felulet.png)
