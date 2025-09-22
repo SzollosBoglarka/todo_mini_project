@@ -67,17 +67,17 @@ A feladatkezelő felületről **kijelentkezés** gombbal lehessen kijelentkezni,
 ### 5.2 Igényelt üzleti folyamatok diagram
 ![TODO feladatkezelő rendszer - Igényelt üzleti folyamat diagram](./src/uzleti_folyamatok.png)
 
-## 7. Használati esetek
+## 6. Használati esetek
 
-### 7.1 Aktorok (szereplők) meghatározása
+### 6.1 Aktorok (szereplők) meghatározása
 
 Esetünkben az egyetlen szereplő maga a ***felhasználó***.
 
-### 7.2 Használati eset diagram
+### 6.2 Használati eset diagram
 
 ![TODO feladatkezelő rendszer - Use Case Diagram](./src/use_case_diagram.png)
 
-## 8. Követelménylista
+## 7. Követelménylista
 
 |Modul        | ID |Név                    | v.|Kifejtés                              |
 |-------------|----|-----------------------|---|--------------------------------------|
@@ -91,18 +91,18 @@ Esetünkben az egyetlen szereplő maga a ***felhasználó***.
 | Felület | K8 | Keresés és rendezés | 1.0 |A felhasználó kereshet feladatok között, és rendezheti azokat. |
 | Adatkezelés | K9 | Tárolás | 1.0 |Az alkalmazás minden adatot *(becenév, feladatok)* eltárol a böngésző által biztosított tárolóban *(localStorage)*|
 
-## 9. Képernyőtervek
+## 8. Képernyőtervek
 
-### 9.1 Kezdő oldal
+### 8.1 Kezdő oldal
 ![TODO feladatkezelő rendszer - Kezdő oldal](./src/kezdo_oldal.png)
 
-### 9.2 Feladat kezelő felület
-![TODO feladatkezelő rendszer - Feladat kezelő felület](./src/feladat_kezelo_felulet.png)
+### 8.2 Feladatkezelő oldal
+![TODO feladatkezelő rendszer - Feladatkezelő oldal](./src/feladat_kezelo_felulet.png)
 
-### 9.3 Kijelentkezési oldal
+### 8.3 Kijelentkezési oldal
 ![TODO feladatkezelő rendszer - Kijelentkezési oldal](./src/kijelentkezesi_oldal.png)
 
-## 10. Forgatókönyvek
+## 9. Forgatókönyvek
 
 Szétszort Szilveszter mindennapjait kaotikus cetlik és elfelejtett teendők uralják, míg Pontos Panna mindig szervezett és precíz. Egy hosszúra nyúlt reggel után véletlenül összefutnak a parkban, ahol Panna bemutatja neki a PlanBerry nevű egyszerű, átlátható ToDo alkalmazást, amelyben könnyedén lehet feladatokat létrehozni, szerkeszteni, kategorizálni, határidőt és prioritást adni hozzájuk.
 
