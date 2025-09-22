@@ -271,6 +271,23 @@ Az alábbi osztálydiagram szemlélteti azokat a logikai kapcsolatokat, amelyek 
 - A **Task** entitás a feladatok adatait tartalmazza: cím, leírás, kategória, határidő, prioritás és státusz.
 - A diagramon szereplő metódusok (_updateTitle()_, _delete()_ stb.) szemléltetik, milyen műveletek végezhetők el az adatokon, de ezek nem jelennek meg tényleges objektumorientált metódusként, hanem a rendszer funkcionális működését írják le.
 
+## 9. Implementációs terv
+
+### 9.1 Fejlesztési környezet és eszközök
+A fejlesztéshez a 6. fejezetben részletezett technológiák és eszközök kerülnek alkalmazásra (IDE-k, frontend technológiák, verziókezelés, tesztelési eszközök). 
+### 9.2 Megvalósítási ütemterv
+Az alábbi táblázat a fejlesztés főbb fázisait tartalmazza a feladatokkal és felelősökkel
+
+| Fázis | Tevékenység                                                         | Felelős        |
+| ----- | ------------------------------------------------------------------- | -------------- |
+| 1.    | Projekt inicializálása (repo létrehozása, alapszerkezet)            | PM, PA         |
+| 2.    | Adatmodell implementálása (localStorage struktúra, CRUD függvények) | PA             |
+| 3.    | Felhasználói felület (HTML/CSS/Bootstrap) kialakítása               | UI/UX Designer |
+| 4.    | Feladatkezelő funkciók (létrehozás, módosítás, törlés, státusz)     | PA             |
+| 5.    | Keresés és szűrés implementálása                                    | PA             |
+| 6.    | Tesztelés (funkcionális, reszponzív, kompatibilitási)               | QA             |
+| 7.    | Dokumentáció                                                        | PM, QA         |
+
 ## 10. Tesztterv
 
 ### 10.1 Tesztelés célja
