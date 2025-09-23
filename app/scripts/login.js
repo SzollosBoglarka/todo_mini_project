@@ -1,5 +1,3 @@
-export var currentUserNickname;
-
 const data = JSON.parse(localStorage.getItem("data")) || {users: []};
 const users = data.users;
 
@@ -15,17 +13,24 @@ if (loginBtn) {
 }
 
 const nicknameValidation = (userNickname) => {
-    users.forEach((user) => {
-        if (user.nickname === userNickname) {
-            //TODO: exception handling -> nickname already exist
-        }
-    })
-    login(userNickname);
-}
+    const existingUser = users.find(user => user.nickname === userNickname);
+
+    if (existingUser) {
+        localStorage.setItem("currentUser", userNickname);
+    } else {
+        login(userNickname);
+    }
+};
 
 const login = (userNickname) => {
-    users.push({id: users.length + 1, nickname: userNickname, tasks: []});
-    //console.log(users.length);
+    const newUser = {
+        id: users.length + 1,
+        nickname: userNickname,
+        tasks: []
+    };
+
+    users.push(newUser);
     localStorage.setItem("data", JSON.stringify(data));
-}
+    localStorage.setItem("currentUser", userNickname);
+};
 
