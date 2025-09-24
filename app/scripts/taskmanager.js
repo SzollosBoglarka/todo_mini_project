@@ -102,6 +102,45 @@ if(saveBtn) {
     });
 }
 
+// ADD TASK
+
+const newTaskBtn = document.getElementById("new-task-btn");
+
+newTaskBtn.addEventListener("click", () => {
+    editingTaskId = null;
+    document.getElementById("taskModalLabel").innerText = "Új feladat";
+
+    title.value = "";
+    description.value = "";
+    category.value = "";
+    deadline.value = "";
+    priority.value = "";
+    status.value = "";
+});
+
+if (saveBtn) {
+    saveBtn.addEventListener("click", () => {
+        if (editingTaskId === null) {
+            const newTask = {
+                id: tasks.length > 0 ? tasks[tasks.length - 1].id + 1 : 1,
+                title: title.value,
+                description: description.value,
+                category: category.value,
+                deadline: deadline.value,
+                priority: priority.value,
+                status: status.value
+            };
+            tasks.push(newTask);
+        }
+
+        const user = data.users.find(user => user.nickname === currentUser);
+        user.tasks = tasks;
+        localStorage.setItem("data", JSON.stringify(data));
+
+        window.location.reload();
+    });
+}
+
 // DELETE TASK
 function attachDeleteEvents() {
     document.querySelectorAll(".delete-btn").forEach(btn => {
