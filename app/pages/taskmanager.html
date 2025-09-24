@@ -6,38 +6,98 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PlanBerry</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
 
-    <h1>Hello, <span id="user-nickname"> </span>!</h1>
-    <h2>Készen állsz, hogy leszüreteld a mai teendőidet?</h2>
+<h1>Hello, <span id="user-nickname"> </span>!</h1>
+<h2>Készen állsz, hogy leszüreteld a mai teendőidet?</h2>
 
-    <a href="logout.html"><button id="logout-btn" class="btn">Kijelentkezés</button></a>
+<a href="logout.html">
+    <button id="logout-btn" class="btn">Kijelentkezés</button>
+</a>
 
-    <button class="btn">Új feladat</button>
+<button class="btn" data-bs-toggle="modal" data-bs-target="#taskModal" id="new-task-btn">Új feladat</button>
 
-    <input type="search" class="form-control" placeholder="Keresés...">
+<input type="search" class="form-control" placeholder="Keresés...">
 
-    <table id="taskManagerTable" class="table">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Cím</th>
-                <th>Feladat leírás</th>
-                <th>Kategória</th>
-                <th>Határidő</th>
-                <th>Prioritás</th>
-                <th>Státusz</th>
-                <th>Módosítás</th>
-            </tr>
-        </thead>
-        <tbody>
+<table id="taskManagerTable" class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Cím</th>
+        <th>Feladat leírás</th>
+        <th>Kategória</th>
+        <th>Határidő</th>
+        <th>Prioritás</th>
+        <th>Státusz</th>
+        <th>Módosítás</th>
+    </tr>
+    </thead>
+    <tbody>
 
-        </tbody>
-    </table>
+    </tbody>
+</table>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="../scripts/taskmanager.js"></script>
+<div class="modal fade" id="taskModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="taskModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="taskModalLabel"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <label for="task_title">Cím</label>
+                <input id="task_title" type="text" class="form-control" >
+
+                <label for="task_description">Leírás</label>
+                <textarea id="task_description" class="form-control" rows="3"></textarea>
+
+                <label for="task_category">Kategória</label>
+                <select id="task_category" class="form-select">
+                    <option selected></option>
+                    <option value="Személyes">Személyes</option>
+                    <option value="Munka">Munka</option>
+                    <option value="Iskola">Iskola</option>
+                    <option value="Háztartás">Háztartás</option>
+                    <option value="Egészség">Egészség</option>
+                    <option value="Szabadidő">Szabadidő</option>
+                </select>
+
+                <label for="task_deadline">Határidő</label>
+                <input id="task_deadline" class="form-control" type="date" />
+
+                <label for="task_priority">Prioritás</label>
+                <select id="task_priority" class="form-select">
+                    <option selected></option>
+                    <option value="Magas">Magas</option>
+                    <option value="Közepes">Közepes</option>
+                    <option value="Alacsony">Alacsony</option>
+                </select>
+
+                <label for="task_status">Státusz</label>
+                <select id="task_status" class="form-select" >
+                    <option selected></option>
+                    <option value="Új">Új</option>
+                    <option value="Folyamatban">Folyamatban</option>
+                    <option value="Kész">Kész</option>
+                </select>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+                <button id="edit-btn" type="button" class="btn btn-primary">Mentés</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+<script src="../scripts/taskmanager.js"></script>
 </body>
 </html>
