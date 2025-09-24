@@ -11,6 +11,7 @@ window.onload = () => {
         tbody.insertAdjacentHTML("beforeend", renderTaskRow(task));
     });
     attachEditEvents();
+    attachDeleteEvents();
 }
 
 const renderTaskRow = (task) => {
@@ -25,7 +26,7 @@ const renderTaskRow = (task) => {
             <td>${task.status}</td>
             <td>
                 <button data-id="${task.id}" data-bs-toggle="modal" data-bs-target="#taskModal" class="btn edit">Szerkesztés</button>
-                <button class="btn">Törlés</button>
+                <button data-id="${task.id}" class="btn delete-btn">Törlés</button>
             </td>
         </tr>
     `;
@@ -98,6 +99,22 @@ if(saveBtn) {
 
         const modal = document.getElementById("taskModal");
         modal.hidden = true;
+    });
+}
+
+// DELETE TASK
+function attachDeleteEvents() {
+    document.querySelectorAll(".delete-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            const taskId = Number(e.target.dataset.id);
+
+            const new_tasks = tasks.filter(task => task.id !== taskId);
+
+            data.users.find(user => user.nickname === currentUser).tasks = new_tasks;
+            localStorage.setItem("data", JSON.stringify(data));
+
+            e.target.closest("tr").remove();
+        })
     });
 }
 
