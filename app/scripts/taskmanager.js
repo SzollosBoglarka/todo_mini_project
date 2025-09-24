@@ -30,3 +30,11 @@ const renderTaskRow = (task) => {
         </tr>
     `;
 }
+
+const logoutBtn = document.getElementById("logout-btn");
+
+logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("currentUser");
+})
+
+const userWelcome = (document.getElementById("user-nickname").innerHTML = currentUser);
