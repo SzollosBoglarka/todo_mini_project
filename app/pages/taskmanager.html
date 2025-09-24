@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PlanBerry</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+
+    <h1>Hello, <span id="user-nickname"> </span>!</h1>
+    <h2>Készen állsz, hogy leszüreteld a mai teendőidet?</h2>
+
+    <a href="logout.html"><button id="logout-btn" class="btn">Kijelentkezés</button></a>
+
+    <button class="btn">Új feladat</button>
+
+    <input type="search" class="form-control" placeholder="Keresés...">
+
+    <table id="taskManagerTable" class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Cím</th>
+                <th>Feladat leírás</th>
+                <th>Kategória</th>
+                <th>Határidő</th>
+                <th>Prioritás</th>
+                <th>Státusz</th>
+                <th>Módosítás</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezárás"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Cím</th>
+                                <th>Feladatleírás</th>
+                                <th>Kategória</th>
+                                <th>Határidő</th>
+                                <th>Prioritás</th>
+                                <th>Státusz</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bevásárlás</td>
+                                <td>Kenyér, tej, tojás, gyümölcs beszerzése</td>
+                                <td>Személyes</td>
+                                <td>2025.09.25</td>
+                                <td>Közepes</td>
+                                <td>Folyamatban</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-bs-dismiss="modal">Mégsem</button>
+                    <button type="button" class="btn" data-bs-dismiss="modal">Mentés</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="../scripts/taskmanager.js"></script>
+</body>
+</html>
