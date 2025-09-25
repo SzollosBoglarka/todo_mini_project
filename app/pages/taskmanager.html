@@ -32,7 +32,20 @@
         <th>#</th>
         <th>Cím</th>
         <th>Feladat leírás</th>
-        <th>Kategória</th>
+        <th>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown">Kategória</button>
+                <ul class="dropdown-menu">
+                    <li><button class="dropdown-item category-filter" data-category="kategória">Kategória</button></li>
+                    <li><button class="dropdown-item category-filter" data-category="személyes">Személyes</button></li>
+                    <li><button class="dropdown-item category-filter" data-category="munka">Munka</button></li>
+                    <li><button class="dropdown-item category-filter" data-category="iskola">Iskola</button></li>
+                    <li><button class="dropdown-item category-filter" data-category="háztartás">Háztartás</button></li>
+                    <li><button class="dropdown-item category-filter" data-category="egészség">Egészség</button></li>
+                    <li><button class="dropdown-item category-filter" data-category="szabadidő">Szabadidő</button></li>
+                </ul>
+            </div>
+        </th>
         <th>Határidő</th>
         <th>Prioritás</th>
         <th>Státusz</th>

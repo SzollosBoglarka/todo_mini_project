@@ -239,6 +239,28 @@ searchInput.addEventListener("input", () => {
     });
 });
 
+// CATEGORY SEARCH
+
+document.querySelectorAll(".category-filter").forEach(item => {
+    item.addEventListener("click", (e) => {
+        e.preventDefault();
+        const selectedText = e.target.textContent;
+        const selectedCategory = e.target.dataset.category.toLowerCase();
+
+        document.getElementById("categoryDropdown").textContent = selectedText;
+
+        document.querySelectorAll("#taskManagerTable tbody tr").forEach(row => {
+            const category = row.querySelector(".task_category").textContent.toLowerCase();
+
+            if (selectedCategory === "kategória" || category === selectedCategory) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        });
+    });
+});
+
 // LOGOUT
 
 const logoutBtn = document.getElementById("logout-btn");
