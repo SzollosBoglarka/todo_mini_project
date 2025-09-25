@@ -20,6 +20,12 @@
 
 <button class="btn" data-bs-toggle="modal" data-bs-target="#taskModal" id="new-task-btn">Új feladat</button>
 
+<div>
+    <p>új: <span id="new_status_counter">  </span></p>
+    <p>folyamatban: <span id="in_progress_status_counter"> </span></p>
+    <p>kész: <span id="done_status_counter"> </span></p>
+</div>
+
 <input type="search" class="form-control" placeholder="Keresés...">
 
 <table id="taskManagerTable" class="table">
@@ -51,7 +57,7 @@
             <div class="modal-body">
 
                 <label for="task_title">Cím</label>
-                <input id="task_title" type="text" class="form-control" >
+                <input id="task_title" type="text" class="form-control">
 
                 <label for="task_description">Leírás</label>
                 <textarea id="task_description" class="form-control" rows="3"></textarea>
@@ -68,7 +74,7 @@
                 </select>
 
                 <label for="task_deadline">Határidő</label>
-                <input id="task_deadline" class="form-control" type="date" />
+                <input id="task_deadline" class="form-control" type="date"/>
 
                 <label for="task_priority">Prioritás</label>
                 <select id="task_priority" class="form-select">
@@ -79,7 +85,7 @@
                 </select>
 
                 <label for="task_status">Státusz</label>
-                <select id="task_status" class="form-select" >
+                <select id="task_status" class="form-select">
                     <option selected></option>
                     <option value="Új">Új</option>
                     <option value="Folyamatban">Folyamatban</option>

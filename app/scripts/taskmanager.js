@@ -12,18 +12,19 @@ window.onload = () => {
     });
     attachEditEvents();
     attachDeleteEvents();
+    status_counter(tasks);
 }
 
 const renderTaskRow = (task) => {
     return `
         <tr>
-            <td>${task.id}</td>
-            <td>${task.title}</td>
-            <td>${task.description}</td>
-            <td>${task.category}</td>
-            <td>${task.deadline}</td>
-            <td>${task.priority}</td>
-            <td>${task.status}</td>
+            <td class="task_id">${task.id}</td>
+            <td class="task_title">${task.title}</td>
+            <td class="task_description">${task.description}</td>
+            <td class="task_category">${task.category}</td>
+            <td class="task_deadline">${task.deadline}</td>
+            <td class="task_priority">${task.priority}</td>
+            <td class="task_status">${task.status}</td>
             <td>
                 <button data-id="${task.id}" data-bs-toggle="modal" data-bs-target="#taskModal" class="btn edit">Szerkesztés</button>
                 <button data-id="${task.id}" class="btn delete-btn">Törlés</button>
@@ -70,7 +71,7 @@ const loadTaskIntoModal = (task) => {
     status.value = task.status;
 }
 
-if(saveBtn) {
+if (saveBtn) {
     saveBtn.addEventListener("click", () => {
         const updatedTask = {
             id: editingTaskId,
@@ -107,15 +108,17 @@ if(saveBtn) {
 const newTaskBtn = document.getElementById("new-task-btn");
 
 newTaskBtn.addEventListener("click", () => {
+    const today = new Date();
+
     editingTaskId = null;
     document.getElementById("taskModalLabel").innerText = "Új feladat";
 
     title.value = "";
     description.value = "";
     category.value = "";
-    deadline.value = "";
+    deadline.value = today.toISOString().split("T")[0];
     priority.value = "";
-    status.value = "";
+    status.value = "Új";
 });
 
 if (saveBtn) {
@@ -142,6 +145,7 @@ if (saveBtn) {
 }
 
 // DELETE TASK
+
 function attachDeleteEvents() {
     document.querySelectorAll(".delete-btn").forEach(btn => {
         btn.addEventListener("click", (e) => {
@@ -169,10 +173,43 @@ function attachDeleteEvents() {
                         text: "A feladat sikeresen törölve lett.",
                         icon: "success"
                     });
+                    window.location.reload()
                 }
             });
         })
     });
+
+}
+
+// COUNTER
+
+const new_status = document.getElementById("new_status_counter");
+const in_progress_status = document.getElementById("in_progress_status_counter");
+const done_status = document.getElementById("done_status_counter");
+
+const status_counter = (tasks) =>{
+    let news = 0;
+    let in_progresses = 0;
+    let dones = 0;
+
+    tasks.forEach((task) => {
+        if (task.status === "Új") {
+            news += 1;
+        }
+        else if (task.status=== "Folyamatban") {
+            in_progresses += 1;
+        }
+        else {
+            dones += 1;
+        }
+    })
+    set_status_count({news, in_progresses, dones}) ;
+}
+
+const set_status_count = (status) => {
+    new_status.innerText = status.news;
+    in_progress_status.innerText = status.in_progresses;
+    done_status.innerText = status.dones;
 }
 
 // LOGOUT
