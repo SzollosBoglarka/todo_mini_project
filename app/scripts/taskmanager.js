@@ -171,8 +171,12 @@ function attachDeleteEvents() {
                     Swal.fire({
                         title: "Törölve!",
                         text: "A feladat sikeresen törölve lett.",
-                        icon: "success"
+                        icon: "success",
+                        showConfirmButton: false
                     });
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1500);
                 }
             });
         })
