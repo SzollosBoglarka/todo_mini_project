@@ -145,14 +145,32 @@ if (saveBtn) {
 function attachDeleteEvents() {
     document.querySelectorAll(".delete-btn").forEach(btn => {
         btn.addEventListener("click", (e) => {
+
             const taskId = Number(e.target.dataset.id);
 
-            const new_tasks = tasks.filter(task => task.id !== taskId);
+            Swal.fire({
+                title: "Biztosan töröli szeretnéd ezt a feladatot?",
+                text: "Ez a művelet visszavonhatatlan!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Igen, törlés!",
+                cancelButtonText: "Mégsem!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const new_tasks = tasks.filter(task => task.id !== taskId);
 
-            data.users.find(user => user.nickname === currentUser).tasks = new_tasks;
-            localStorage.setItem("data", JSON.stringify(data));
+                    data.users.find(user => user.nickname === currentUser).tasks = new_tasks;
+                    localStorage.setItem("data", JSON.stringify(data));
 
-            e.target.closest("tr").remove();
+                    e.target.closest("tr").remove();
+
+                    Swal.fire({
+                        title: "Törölve!",
+                        text: "A feladat sikeresen törölve lett.",
+                        icon: "success"
+                    });
+                }
+            });
         })
     });
 }
