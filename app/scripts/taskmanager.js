@@ -219,8 +219,12 @@ const set_status_count = (status) => {
 
 const searchInput = document.getElementById("searchInput");
 
+const categoryDropdown = document.getElementById("categoryDropdown");
+
 searchInput.addEventListener("input", () => {
     const query = searchInput.value.toLowerCase();
+
+    categoryDropdown.textContent = "Kategória";
 
     document.querySelectorAll("#taskManagerTable tbody tr").forEach(row => {
         const id = row.querySelector(".task_id").textContent.toLowerCase();
