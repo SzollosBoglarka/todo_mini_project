@@ -14,9 +14,7 @@
 <h1>Hello, <span id="user-nickname"> </span>!</h1>
 <h2>Készen állsz, hogy leszüreteld a mai teendőidet?</h2>
 
-<a href="logout.html">
-    <button id="logout-btn" class="btn">Kijelentkezés</button>
-</a>
+<a href="logout.html"><button id="logout-btn" class="btn">Kijelentkezés</button></a>
 
 <button class="btn" data-bs-toggle="modal" data-bs-target="#taskModal" id="new-task-btn">Új feladat</button>
 
@@ -26,7 +24,7 @@
     <p>kész: <span id="done_status_counter"> </span></p>
 </div>
 
-<input type="search" class="form-control" placeholder="Keresés...">
+<input id="searchInput" type="text" class="form-control search-input" placeholder="Keresés...">
 
 <table id="taskManagerTable" class="table">
     <thead>

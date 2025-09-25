@@ -173,7 +173,6 @@ function attachDeleteEvents() {
                         text: "A feladat sikeresen törölve lett.",
                         icon: "success"
                     });
-                    window.location.reload()
                 }
             });
         })
@@ -211,6 +210,30 @@ const set_status_count = (status) => {
     in_progress_status.innerText = status.in_progresses;
     done_status.innerText = status.dones;
 }
+
+// SEARCH
+
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+
+    document.querySelectorAll("#taskManagerTable tbody tr").forEach(row => {
+        const id = row.querySelector(".task_id").textContent.toLowerCase();
+        const title = row.querySelector(".task_title").textContent.toLowerCase();
+        const description = row.querySelector(".task_description").textContent.toLowerCase();
+        const category = row.querySelector(".task_category").textContent.toLowerCase();
+        const deadline = row.querySelector(".task_deadline").textContent.toLowerCase();
+        const priority = row.querySelector(".task_priority").textContent.toLowerCase();
+        const status = row.querySelector(".task_status").textContent.toLowerCase();
+
+        if (id.includes(query) || title.includes(query) || description.includes(query) || category.includes(query) || deadline.includes(query) || priority.includes(query) || status.includes(query)) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+});
 
 // LOGOUT
 
