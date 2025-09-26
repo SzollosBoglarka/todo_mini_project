@@ -8,19 +8,81 @@
     <title>PlanBerry</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/taskmanager.css">
 </head>
 <body>
 
 <h1>Hello, <span id="user-nickname"> </span>!</h1>
 <h2>Készen állsz, hogy leszüreteld a mai teendőidet?</h2>
 
-<a href="logout.html">
-    <button id="logout-btn" class="btn">Kijelentkezés</button>
-</a>
+<a href="logout.html"><button id="logout-btn" class="btn">Kijelentkezés</button></a>
 
 <button class="btn" data-bs-toggle="modal" data-bs-target="#taskModal" id="new-task-btn">Új feladat</button>
 
-<input type="search" class="form-control" placeholder="Keresés...">
+<div>
+    <p>új: <span id="new_status_counter">  </span></p>
+    <p>folyamatban: <span id="in_progress_status_counter"> </span></p>
+    <p>kész: <span id="done_status_counter"> </span></p>
+</div>
+
+<div id="search_group">
+    <input id="searchInput" type="text" class="form-control search-input w-50" placeholder="Keresés...">
+
+    <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown">Kategória
+        </button>
+        <ul class="dropdown-menu">
+            <li>
+                <button class="dropdown-item category-filter" data-category="kategória">Kategória</button>
+            </li>
+            <li>
+                <button class="dropdown-item category-filter" data-category="személyes">Személyes</button>
+            </li>
+            <li>
+                <button class="dropdown-item category-filter" data-category="munka">Munka</button>
+            </li>
+            <li>
+                <button class="dropdown-item category-filter" data-category="iskola">Iskola</button>
+            </li>
+            <li>
+                <button class="dropdown-item category-filter" data-category="háztartás">Háztartás</button>
+            </li>
+            <li>
+                <button class="dropdown-item category-filter" data-category="egészség">Egészség</button>
+            </li>
+            <li>
+                <button class="dropdown-item category-filter" data-category="szabadidő">Szabadidő</button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" id="priorityDropdown" data-bs-toggle="dropdown">
+            Prioritás
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item priority-filter" data-priority="prioritás">Prioritás</a></li>
+            <li><a class="dropdown-item priority-filter" data-priority="magas">Magas</a></li>
+            <li><a class="dropdown-item priority-filter" data-priority="közepes">Közepes</a></li>
+            <li><a class="dropdown-item priority-filter" data-priority="alacsony">Alacsony</a></li>
+        </ul>
+    </div>
+
+    <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" id="statusDropdown" data-bs-toggle="dropdown">
+            Státusz
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item status-filter" data-status="státusz">Státusz</a></li>
+            <li><a class="dropdown-item status-filter" data-status="új">Új</a></li>
+            <li><a class="dropdown-item status-filter" data-status="folyamatban">Folyamatban</a></li>
+            <li><a class="dropdown-item status-filter" data-status="kész">Kész</a></li>
+        </ul>
+    </div>
+
+    <button id="filterDelete" class="btn">Szűrők törlése</button>
+</div>
+
 
 <table id="taskManagerTable" class="table">
     <thead>
@@ -51,7 +113,7 @@
             <div class="modal-body">
 
                 <label for="task_title">Cím</label>
-                <input id="task_title" type="text" class="form-control" >
+                <input id="task_title" type="text" class="form-control">
 
                 <label for="task_description">Leírás</label>
                 <textarea id="task_description" class="form-control" rows="3"></textarea>
@@ -68,7 +130,7 @@
                 </select>
 
                 <label for="task_deadline">Határidő</label>
-                <input id="task_deadline" class="form-control" type="date" />
+                <input id="task_deadline" class="form-control" type="date"/>
 
                 <label for="task_priority">Prioritás</label>
                 <select id="task_priority" class="form-select">
@@ -79,7 +141,7 @@
                 </select>
 
                 <label for="task_status">Státusz</label>
-                <select id="task_status" class="form-select" >
+                <select id="task_status" class="form-select">
                     <option selected></option>
                     <option value="Új">Új</option>
                     <option value="Folyamatban">Folyamatban</option>
