@@ -3,12 +3,25 @@ const users = data.users;
 
 //console.log(users[0]);
 
-const loginBtn = document.getElementById("login-btn");
+const form = document.querySelector(".needs-validation");
 
-if (loginBtn) {
-    loginBtn.addEventListener("click", (e) => {
-        currentUserNickname = document.getElementById("nickname").value
-        nicknameValidation(currentUserNickname)
+if (form) {
+    form.addEventListener("submit", (event) => {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+            form.classList.add("was-validated");
+            return;
+        }
+        event.preventDefault()
+
+        let currentUserNickname = document.getElementById("nickname").value;
+        nicknameValidation(currentUserNickname);
+
+        window.location.href = "pages/taskmanager.html";
+
+        removeInvalidSign();
+
     })
 }
 
@@ -34,3 +47,7 @@ const login = (userNickname) => {
     localStorage.setItem("currentUser", userNickname);
 };
 
+const removeInvalidSign = () =>{
+    form.classList.remove("was-validated");
+    form.reset();
+}

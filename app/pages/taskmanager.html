@@ -14,14 +14,13 @@
 
 <header>
     <div>
-        <h1>Hello, <span id="user-nickname"> </span>! Készen állsz, hogy leszüreteld a mai teendőidet?</h1>
+        <h1>Hello,<span id="user-nickname"></span>! Készen állsz, hogy leszüreteld a mai teendőidet?</h1>
     </div>
 
     <a href="logout.html">
         <button id="logout-btn" class="btn">Kijelentkezés</button>
     </a>
 </header>
-
 
 <div id="task_trackers">
     <div id="status_counter">
@@ -36,7 +35,7 @@
 </div>
 
 <div id="search_group">
-    <input id="searchInput" type="text" class="form-control search-input w-50" placeholder="Keresés...">
+    <input id="searchInput" type="text" class="form-control search-input w-50" placeholder=" &#128270   Keresés...">
 
     <div class="dropdown">
         <button class="btn dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown">Kategória
@@ -93,24 +92,25 @@
     <button id="filterDelete" class="btn">Szűrők törlése</button>
 </div>
 
+<div id="table" class="table-responsive">
+    <table id="taskManagerTable" class="table">
+        <thead>
+        <tr>
+            <th># &#x25b4;&#x25be;</th>
+            <th>Cím &#x25b4;&#x25be;</th>
+            <th>Feladat leírás</th>
+            <th>Kategória</th>
+            <th>Határidő &#x25b4;&#x25be;</th>
+            <th>Prioritás</th>
+            <th>Státusz</th>
+            <th>Módosítás</th>
+        </tr>
+        </thead>
+        <tbody>
 
-<table id="taskManagerTable" class="table">
-    <thead>
-    <tr>
-        <th># &#x25b4;&#x25be;</th>
-        <th>Cím &#x25b4;&#x25be;</th>
-        <th>Feladat leírás</th>
-        <th>Kategória</th>
-        <th>Határidő &#x25b4;&#x25be;</th>
-        <th>Prioritás</th>
-        <th>Státusz</th>
-        <th>Módosítás</th>
-    </tr>
-    </thead>
-    <tbody>
-
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
 
 <div class="modal fade" id="taskModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
      aria-labelledby="taskModalLabel" aria-hidden="true">
@@ -128,7 +128,7 @@
                     <input id="task_title" type="text" class="form-control" required>
 
                     <label for="task_description">Leírás</label>
-                    <textarea id="task_description" class="form-control" rows="3"></textarea>
+                    <textarea id="task_description" class="form-control" rows="3" required></textarea>
 
                     <label for="task_category">Kategória</label>
                     <select id="task_category" class="form-select" required>
@@ -173,6 +173,10 @@
 
     </div>
 </div>
+
+<footer >
+    <p>&copy; 2025 PlanBerry. All rights reserved.</p>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

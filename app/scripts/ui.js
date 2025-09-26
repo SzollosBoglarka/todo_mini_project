@@ -39,12 +39,12 @@ const coloringBackground = () => {
     } else if (priority.value === "Alacsony") {
         priority.style.backgroundColor = "#f3d8ce";
     } else {
-        priority.style.backgroundColor = "white";
+        priority.style.backgroundColor = "#A09E57";
     }
 }
 
 const setColorToDefault = () => {
-    priority.style.backgroundColor = "white";
+    priority.style.backgroundColor = "#A09E57";
 }
 
 // USER NICKNAME IN THE WELCOME TEXT

@@ -3,6 +3,9 @@
 
 body {
     font-size: 15px;
+    position: relative;
+    min-height: calc(100vh - 40px);
+    padding-bottom: 100px;
 }
 
 header, #task_trackers {
@@ -10,10 +13,12 @@ header, #task_trackers {
     justify-content: space-around;
     align-items: center;
     margin: 2em 0;
+    flex-wrap: wrap;
 }
 
 header div *{
     text-align: center;
+    margin: 0.4em 0.4em;
 }
 
 #status_counter{
@@ -32,12 +37,15 @@ header div *{
 
 #search_group{
     display: flex;
+    flex-wrap: wrap;
     margin: 0 auto 3em auto;
     width: 70%;
+    gap:0.1em
 }
 
 #search_group > *{
-    margin-right: 1em;
+    margin: 0.5em 0.5em;
+
 }
 
 /* COLORING BY PRIORITY */
@@ -56,6 +64,10 @@ header div *{
 
 .btn {
     color: #5E1104;
+}
+
+#table {
+    margin-bottom: 3em;
 }
 
 #taskManagerTable th {

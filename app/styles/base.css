@@ -2,6 +2,10 @@ body {
     background: #d1c791;
     color: #5E1104;
     font-family: Merriweather, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: relative;
+    min-height: calc(100vh - 100px - 60px);
+    padding-bottom: 100px;
+    margin: 0.5em;
 }
 
 ::selection {
@@ -24,4 +28,11 @@ h2 {
 .btn:hover {
     color: #5E1104;
     border: solid 1px #5E1104;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
