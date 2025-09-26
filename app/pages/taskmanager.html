@@ -47,8 +47,32 @@
             </div>
         </th>
         <th>Határidő</th>
-        <th>Prioritás</th>
-        <th>Státusz</th>
+        <th>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="priorityDropdown" data-bs-toggle="dropdown">
+                    Prioritás
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item priority-filter" data-priority="prioritás">Összes</a></li>
+                    <li><a class="dropdown-item priority-filter" data-priority="magas">Magas</a></li>
+                    <li><a class="dropdown-item priority-filter" data-priority="közepes">Közepes</a></li>
+                    <li><a class="dropdown-item priority-filter" data-priority="alacsony">Alacsony</a></li>
+                </ul>
+            </div>
+        </th>
+        <th>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="statusDropdown" data-bs-toggle="dropdown">
+                    Státusz
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item status-filter" data-status="státusz">Összes</a></li>
+                    <li><a class="dropdown-item status-filter" data-status="új">Új</a></li>
+                    <li><a class="dropdown-item status-filter" data-status="folyamatban">Folyamatban</a></li>
+                    <li><a class="dropdown-item status-filter" data-status="kész">Kész</a></li>
+                </ul>
+            </div>
+        </th>
         <th>Módosítás</th>
     </tr>
     </thead>
