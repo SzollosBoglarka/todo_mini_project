@@ -6,15 +6,15 @@
 }
 
 .form-control {
-    background: #A09E57;
+    background: #d1c791;
     color: #5E1104;
-    caret-color: #5E1104;
-    border: none;
+    caret-color: #d1c791;
+    border: solid 1px #5E1104;
 }
 
 .form-control:focus {
-    background: rgba(243, 216, 206, 0.5);
-    color: #5E1104;
+    background: #5E1104;
+    color: #d1c791;
     box-shadow: 0 0 0 1px rgba(94, 17, 4, 0.8);
 }
 
@@ -34,9 +34,9 @@
 }
 
 .form-select {
-    background: #A09E57;
+    background: #d1c791;
     color: #5E1104;
-    border: none;
+    border: solid 1px #5E1104;
 }
 
 .form-select:focus {
@@ -44,22 +44,29 @@
 }
 
 .btn-secondary {
-    background-color: #A09E57;
-    border: none;
-}
-
-.btn-secondary:hover {
     background: #d1c791;
     color: #5E1104;
     border: solid 1px #5E1104;
 }
 
+.btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover {
+    background: #5E1104 !important;
+    color: #d1c791 !important;
+    border: solid 1px #5E1104 !important;
+}
+
 .btn-primary {
+    background: #5E1104;
+    color: #d1c791 !important;
     border: none;
 }
 
-.btn-primary:hover {
-    background: #5E1104;
-    color: #d1c791;
-    border: solid 1px #5E1104;
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+    background: #d1c791 !important;
+    color: #5E1104 !important;
+    border: solid 1px #5E1104 !important;
+}
+
+.btn-close {
+    box-shadow: none !important;
 }

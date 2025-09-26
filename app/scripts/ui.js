@@ -31,20 +31,22 @@ const set_status_count = (status) => {
 
 let priority = document.getElementById("task_priority");
 
+let modalBackground = document.getElementById("modal-content");
+
 const coloringBackground = () => {
     if (priority.value === "Magas") {
-        priority.style.backgroundColor = "#bd7880";
+        modalBackground.style.backgroundColor = "#bd7880";
     } else if (priority.value === "Közepes") {
-        priority.style.backgroundColor = "#A09E57";
+        modalBackground.style.backgroundColor = "#A09E57";
     } else if (priority.value === "Alacsony") {
-        priority.style.backgroundColor = "#f3d8ce";
+        modalBackground.style.backgroundColor = "#f3d8ce";
     } else {
-        priority.style.backgroundColor = "#A09E57";
+        modalBackground.style.backgroundColor = "#d1c791";
     }
 }
 
 const setColorToDefault = () => {
-    priority.style.backgroundColor = "#A09E57";
+    modalBackground.style.backgroundColor = "#d1c791";
 }
 
 // USER NICKNAME IN THE WELCOME TEXT
