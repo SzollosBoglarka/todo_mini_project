@@ -30,7 +30,8 @@
         <p>kész: <span id="done_status_counter"> </span></p>
     </div>
 
-    <button class="btn" data-bs-toggle="modal" data-bs-target="#taskModal" id="new-task-btn">+ Új feladat létrehozása</button>
+    <button class="btn" data-bs-toggle="modal" data-bs-target="#taskModal" id="new-task-btn">+ Új feladat létrehozása
+    </button>
 
 </div>
 
@@ -115,54 +116,61 @@
      aria-labelledby="taskModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="taskModalLabel"></h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="setColorToDefault()"></button>
-            </div>
-            <div class="modal-body">
+            <form class="needs-validation" novalidate>
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="taskModalLabel"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                            onclick="setColorToDefault()"></button>
+                </div>
+                <div class="modal-body">
 
-                <label for="task_title">Cím</label>
-                <input id="task_title" type="text" class="form-control">
+                    <label for="task_title">Cím</label>
+                    <input id="task_title" type="text" class="form-control" required>
 
-                <label for="task_description">Leírás</label>
-                <textarea id="task_description" class="form-control" rows="3"></textarea>
+                    <label for="task_description">Leírás</label>
+                    <textarea id="task_description" class="form-control" rows="3"></textarea>
 
-                <label for="task_category">Kategória</label>
-                <select id="task_category" class="form-select">
-                    <option selected></option>
-                    <option value="Személyes">Személyes</option>
-                    <option value="Munka">Munka</option>
-                    <option value="Iskola">Iskola</option>
-                    <option value="Háztartás">Háztartás</option>
-                    <option value="Egészség">Egészség</option>
-                    <option value="Szabadidő">Szabadidő</option>
-                </select>
+                    <label for="task_category">Kategória</label>
+                    <select id="task_category" class="form-select" required>
+                        <option selected></option>
+                        <option value="Személyes">Személyes</option>
+                        <option value="Munka">Munka</option>
+                        <option value="Iskola">Iskola</option>
+                        <option value="Háztartás">Háztartás</option>
+                        <option value="Egészség">Egészség</option>
+                        <option value="Szabadidő">Szabadidő</option>
+                    </select>
 
-                <label for="task_deadline">Határidő</label>
-                <input id="task_deadline" class="form-control" type="date"/>
+                    <label for="task_deadline">Határidő</label>
+                    <input id="task_deadline" class="form-control" type="date" required/>
 
-                <label for="task_priority">Prioritás</label>
-                <select id="task_priority" class="form-select" onchange="coloringBackground()">
-                    <option selected></option>
-                    <option value="Magas">Magas</option>
-                    <option value="Közepes">Közepes</option>
-                    <option value="Alacsony">Alacsony</option>
-                </select>
+                    <label for="task_priority">Prioritás</label>
+                    <select id="task_priority" class="form-select" required onchange="coloringBackground()">
+                        <option selected></option>
+                        <option value="Magas">Magas</option>
+                        <option value="Közepes">Közepes</option>
+                        <option value="Alacsony">Alacsony</option>
+                    </select>
 
-                <label for="task_status">Státusz</label>
-                <select id="task_status" class="form-select">
-                    <option selected></option>
-                    <option value="Új">Új</option>
-                    <option value="Folyamatban">Folyamatban</option>
-                    <option value="Kész">Kész</option>
-                </select>
+                    <label for="task_status">Státusz</label>
+                    <select id="task_status" class="form-select" required>
+                        <option selected></option>
+                        <option value="Új">Új</option>
+                        <option value="Folyamatban">Folyamatban</option>
+                        <option value="Kész">Kész</option>
+                    </select>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="setColorToDefault()">Mégse</button>
-                <button id="save-btn" type="button" class="btn btn-primary" onclick="setColorToDefault()">Mentés</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="cancel-btn" type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                            onclick=" {setColorToDefault();removeInvalidSign()} ">Mégse
+                    </button>
+                    <button id="save-btn" type="submit" class="btn btn-primary">Mentés
+                    </button>
+                </div>
+            </form>
         </div>
+
     </div>
 </div>
 
@@ -170,6 +178,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+
+
 <script src="../scripts/taskmanager.js"></script>
+
 </body>
 </html>

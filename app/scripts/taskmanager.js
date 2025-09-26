@@ -40,6 +40,7 @@ let deadline = document.getElementById("task_deadline");
 let priority = document.getElementById("task_priority");
 let status = document.getElementById("task_status");
 
+
 // MODIFY TASK
 
 const saveBtn = document.getElementById("save-btn");
@@ -73,8 +74,20 @@ const loadTaskIntoModal = (task) => {
     coloringBackground();
 }
 
-if (saveBtn) {
-    saveBtn.addEventListener("click", () => {
+const form = document.querySelector(".needs-validation");
+
+if (form) {
+    form.addEventListener("submit", (event) => {
+
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+            form.classList.add("was-validated");
+            return;
+        }
+
+        event.preventDefault();
+
         const updatedTask = {
             id: editingTaskId,
             title: title.value,
@@ -102,6 +115,8 @@ if (saveBtn) {
 
         const modal = document.getElementById("taskModal");
         modal.hidden = true;
+
+
     });
 }
 
@@ -123,8 +138,18 @@ newTaskBtn.addEventListener("click", () => {
     status.value = "Új";
 });
 
-if (saveBtn) {
-    saveBtn.addEventListener("click", () => {
+if (form) {
+    form.addEventListener("submit", (event) => {
+
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+            form.classList.add("was-validated");
+            return;
+        }
+
+        event.preventDefault();
+
         if (editingTaskId === null) {
             const newTask = {
                 id: tasks.length > 0 ? tasks[tasks.length - 1].id + 1 : 1,
@@ -143,7 +168,13 @@ if (saveBtn) {
         localStorage.setItem("data", JSON.stringify(data));
 
         window.location.reload();
+
     });
+}
+
+const removeInvalidSign = () =>{
+    form.classList.remove("was-validated");
+    form.reset();
 }
 
 // DELETE TASK
@@ -192,7 +223,7 @@ const new_status = document.getElementById("new_status_counter");
 const in_progress_status = document.getElementById("in_progress_status_counter");
 const done_status = document.getElementById("done_status_counter");
 
-const status_counter = (tasks) =>{
+const status_counter = (tasks) => {
     let news = 0;
     let in_progresses = 0;
     let dones = 0;
@@ -200,15 +231,13 @@ const status_counter = (tasks) =>{
     tasks.forEach((task) => {
         if (task.status === "Új") {
             news += 1;
-        }
-        else if (task.status=== "Folyamatban") {
+        } else if (task.status === "Folyamatban") {
             in_progresses += 1;
-        }
-        else {
+        } else {
             dones += 1;
         }
     })
-    set_status_count({news, in_progresses, dones}) ;
+    set_status_count({news, in_progresses, dones});
 }
 
 const set_status_count = (status) => {
@@ -321,7 +350,7 @@ function applyFilters() {
             row.style.display = "none";
         }
     });
-};
+}
 
 // SEARCH
 
@@ -383,22 +412,21 @@ filterDelete.addEventListener("click", (e) => {
 
 // COLORING TASK_PRIORITY SELECT ITEM BACKGROUND
 
-const coloringBackground=()=>{
-    if(priority.value === "Magas"){
+const coloringBackground = () => {
+    if (priority.value === "Magas") {
         priority.style.backgroundColor = "#f3d8ce";
-    } else if(priority.value === "Közepes"){
+    } else if (priority.value === "Közepes") {
         priority.style.backgroundColor = "#A09E57";
-    }else if (priority.value === "Alacsony") {
+    } else if (priority.value === "Alacsony") {
         priority.style.backgroundColor = "#d1c791";
-    } else{
+    } else {
         priority.style.backgroundColor = "white";
     }
 }
 
-const setColorToDefault=()=>{
+const setColorToDefault = () => {
     priority.style.backgroundColor = "white";
 }
-
 
 // LOGOUT
 
