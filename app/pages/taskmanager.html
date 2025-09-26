@@ -1,166 +1,195 @@
 <!doctype html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PlanBerry</title>
+    <link rel="shortcut icon" href="src/PlanBerryLogo.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/taskmanager.css">
 </head>
 <body>
 
-<h1>Hello, <span id="user-nickname"> </span>!</h1>
-<h2>Készen állsz, hogy leszüreteld a mai teendőidet?</h2>
+<header>
+    <div>
+        <h1>Hello,<span id="user-nickname"></span>! Készen állsz, hogy leszüreteld a mai teendőidet?</h1>
+    </div>
 
-<a href="logout.html"><button id="logout-btn" class="btn">Kijelentkezés</button></a>
+    <a href="logout.html">
+        <button id="logout-btn" class="btn">Kijelentkezés</button>
+    </a>
+</header>
+<div id="task_manager_group">
+    <div id="task_trackers">
+        <div id="status_counter">
+            <p>új: <span id="new_status_counter">  </span></p>
+            <p>folyamatban: <span id="in_progress_status_counter"> </span></p>
+            <p>kész: <span id="done_status_counter"> </span></p>
+        </div>
 
-<button class="btn" data-bs-toggle="modal" data-bs-target="#taskModal" id="new-task-btn">Új feladat</button>
+        <button class="btn" data-bs-toggle="modal" data-bs-target="#taskModal" id="new-task-btn">+ Új feladat
+            létrehozása
+        </button>
 
-<div>
-    <p>új: <span id="new_status_counter">  </span></p>
-    <p>folyamatban: <span id="in_progress_status_counter"> </span></p>
-    <p>kész: <span id="done_status_counter"> </span></p>
+    </div>
+
+    <div id="search_group">
+        <input id="searchInput" type="text" class="form-control search-input w-50" placeholder=" &#128270   Keresés...">
+
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown">Kategória
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <button class="dropdown-item category-filter" data-category="kategória">Kategória</button>
+                </li>
+                <li>
+                    <button class="dropdown-item category-filter" data-category="személyes">Személyes</button>
+                </li>
+                <li>
+                    <button class="dropdown-item category-filter" data-category="munka">Munka</button>
+                </li>
+                <li>
+                    <button class="dropdown-item category-filter" data-category="iskola">Iskola</button>
+                </li>
+                <li>
+                    <button class="dropdown-item category-filter" data-category="háztartás">Háztartás</button>
+                </li>
+                <li>
+                    <button class="dropdown-item category-filter" data-category="egészség">Egészség</button>
+                </li>
+                <li>
+                    <button class="dropdown-item category-filter" data-category="szabadidő">Szabadidő</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="priorityDropdown" data-bs-toggle="dropdown">
+                Prioritás
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item priority-filter" data-priority="prioritás">Prioritás</a></li>
+                <li><a class="dropdown-item priority-filter" data-priority="magas">Magas</a></li>
+                <li><a class="dropdown-item priority-filter" data-priority="közepes">Közepes</a></li>
+                <li><a class="dropdown-item priority-filter" data-priority="alacsony">Alacsony</a></li>
+            </ul>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="statusDropdown" data-bs-toggle="dropdown">
+                Státusz
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item status-filter" data-status="státusz">Státusz</a></li>
+                <li><a class="dropdown-item status-filter" data-status="új">Új</a></li>
+                <li><a class="dropdown-item status-filter" data-status="folyamatban">Folyamatban</a></li>
+                <li><a class="dropdown-item status-filter" data-status="kész">Kész</a></li>
+            </ul>
+        </div>
+
+        <button id="filterDelete" class="btn">Szűrők törlése</button>
+    </div>
+
 </div>
 
-<div id="search_group">
-    <input id="searchInput" type="text" class="form-control search-input w-50" placeholder="Keresés...">
+<div id="table" class="table-responsive">
+    <table id="taskManagerTable" class="table">
+        <thead>
+        <tr>
+            <th># &#x25b4;&#x25be;</th>
+            <th>Cím &#x25b4;&#x25be;</th>
+            <th>Feladat leírás</th>
+            <th>Kategória</th>
+            <th>Határidő &#x25b4;&#x25be;</th>
+            <th>Prioritás</th>
+            <th>Státusz</th>
+            <th>Módosítás</th>
+        </tr>
+        </thead>
+        <tbody>
 
-    <div class="dropdown">
-        <button class="btn dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown">Kategória
-        </button>
-        <ul class="dropdown-menu">
-            <li>
-                <button class="dropdown-item category-filter" data-category="kategória">Kategória</button>
-            </li>
-            <li>
-                <button class="dropdown-item category-filter" data-category="személyes">Személyes</button>
-            </li>
-            <li>
-                <button class="dropdown-item category-filter" data-category="munka">Munka</button>
-            </li>
-            <li>
-                <button class="dropdown-item category-filter" data-category="iskola">Iskola</button>
-            </li>
-            <li>
-                <button class="dropdown-item category-filter" data-category="háztartás">Háztartás</button>
-            </li>
-            <li>
-                <button class="dropdown-item category-filter" data-category="egészség">Egészség</button>
-            </li>
-            <li>
-                <button class="dropdown-item category-filter" data-category="szabadidő">Szabadidő</button>
-            </li>
-        </ul>
-    </div>
-
-    <div class="dropdown">
-        <button class="btn dropdown-toggle" type="button" id="priorityDropdown" data-bs-toggle="dropdown">
-            Prioritás
-        </button>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item priority-filter" data-priority="prioritás">Prioritás</a></li>
-            <li><a class="dropdown-item priority-filter" data-priority="magas">Magas</a></li>
-            <li><a class="dropdown-item priority-filter" data-priority="közepes">Közepes</a></li>
-            <li><a class="dropdown-item priority-filter" data-priority="alacsony">Alacsony</a></li>
-        </ul>
-    </div>
-
-    <div class="dropdown">
-        <button class="btn dropdown-toggle" type="button" id="statusDropdown" data-bs-toggle="dropdown">
-            Státusz
-        </button>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item status-filter" data-status="státusz">Státusz</a></li>
-            <li><a class="dropdown-item status-filter" data-status="új">Új</a></li>
-            <li><a class="dropdown-item status-filter" data-status="folyamatban">Folyamatban</a></li>
-            <li><a class="dropdown-item status-filter" data-status="kész">Kész</a></li>
-        </ul>
-    </div>
-
-    <button id="filterDelete" class="btn">Szűrők törlése</button>
+        </tbody>
+    </table>
 </div>
-
-
-<table id="taskManagerTable" class="table">
-    <thead>
-    <tr>
-        <th>#</th>
-        <th>Cím</th>
-        <th>Feladat leírás</th>
-        <th>Kategória</th>
-        <th>Határidő</th>
-        <th>Prioritás</th>
-        <th>Státusz</th>
-        <th>Módosítás</th>
-    </tr>
-    </thead>
-    <tbody>
-
-    </tbody>
-</table>
 
 <div class="modal fade" id="taskModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
      aria-labelledby="taskModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="taskModalLabel"></h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
+        <div class="modal-content" id="modal-content">
+            <form class="needs-validation" novalidate>
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="taskModalLabel"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                            onclick="setColorToDefault()"></button>
+                </div>
+                <div class="modal-body">
 
-                <label for="task_title">Cím</label>
-                <input id="task_title" type="text" class="form-control">
+                    <label for="task_title">Cím</label>
+                    <input id="task_title" type="text" class="form-control" required>
 
-                <label for="task_description">Leírás</label>
-                <textarea id="task_description" class="form-control" rows="3"></textarea>
+                    <label for="task_description">Leírás</label>
+                    <textarea id="task_description" class="form-control" rows="3" required></textarea>
 
-                <label for="task_category">Kategória</label>
-                <select id="task_category" class="form-select">
-                    <option selected></option>
-                    <option value="Személyes">Személyes</option>
-                    <option value="Munka">Munka</option>
-                    <option value="Iskola">Iskola</option>
-                    <option value="Háztartás">Háztartás</option>
-                    <option value="Egészség">Egészség</option>
-                    <option value="Szabadidő">Szabadidő</option>
-                </select>
+                    <label for="task_category">Kategória</label>
+                    <select id="task_category" class="form-select" required>
+                        <option selected></option>
+                        <option value="Személyes">Személyes</option>
+                        <option value="Munka">Munka</option>
+                        <option value="Iskola">Iskola</option>
+                        <option value="Háztartás">Háztartás</option>
+                        <option value="Egészség">Egészség</option>
+                        <option value="Szabadidő">Szabadidő</option>
+                    </select>
 
-                <label for="task_deadline">Határidő</label>
-                <input id="task_deadline" class="form-control" type="date"/>
+                    <label for="task_deadline">Határidő</label>
+                    <input id="task_deadline" class="form-control" type="date" required/>
 
-                <label for="task_priority">Prioritás</label>
-                <select id="task_priority" class="form-select">
-                    <option selected></option>
-                    <option value="Magas">Magas</option>
-                    <option value="Közepes">Közepes</option>
-                    <option value="Alacsony">Alacsony</option>
-                </select>
+                    <label for="task_priority">Prioritás</label>
+                    <select id="task_priority" class="form-select" required onchange="coloringBackground()">
+                        <option selected></option>
+                        <option value="Magas">Magas</option>
+                        <option value="Közepes">Közepes</option>
+                        <option value="Alacsony">Alacsony</option>
+                    </select>
 
-                <label for="task_status">Státusz</label>
-                <select id="task_status" class="form-select">
-                    <option selected></option>
-                    <option value="Új">Új</option>
-                    <option value="Folyamatban">Folyamatban</option>
-                    <option value="Kész">Kész</option>
-                </select>
+                    <label for="task_status">Státusz</label>
+                    <select id="task_status" class="form-select" required>
+                        <option selected></option>
+                        <option value="Új">Új</option>
+                        <option value="Folyamatban">Folyamatban</option>
+                        <option value="Kész">Kész</option>
+                    </select>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
-                <button id="save-btn" type="button" class="btn btn-primary">Mentés</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="cancel-btn" type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                            onclick=" {setColorToDefault();removeInvalidSign()} ">Mégse
+                    </button>
+                    <button id="save-btn" type="submit" class="btn btn-primary">Mentés
+                    </button>
+                </div>
+            </form>
         </div>
+
     </div>
 </div>
+
+<footer>
+    <p>&copy; 2025 PlanBerry. All rights reserved.</p>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-<script src="../scripts/taskmanager.js"></script>
+
+<script src="../scripts/ui.js"></script>
+<script type="module" src="../scripts/taskmanager.js"></script>
+<script src="../scripts/filter.js"></script>
+
 </body>
 </html>

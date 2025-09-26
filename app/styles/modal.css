@@ -1,0 +1,71 @@
+.modal-content {
+    background: #d1c791;
+    color: #5E1104;
+    border: none;
+}
+
+.form-control {
+    background: #d1c791;
+    color: #5E1104;
+    caret-color: #d1c791;
+    border: solid 1px #5E1104;
+}
+
+.form-control:focus {
+    background: #5E1104;
+    color: #d1c791;
+    box-shadow: 0 0 0 1px rgba(94, 17, 4, 0.8);
+}
+
+.modal-content::selection {
+    background: #5E1104;
+    color: #d1c791;
+}
+
+.modal-footer {
+    border: none;
+}
+
+.modal-header {
+    background: #5E1104;
+    color: #d1c791;
+    border: none;
+}
+
+.form-select {
+    background: #d1c791;
+    color: #5E1104;
+    border: solid 1px #5E1104;
+}
+
+.form-select:focus {
+    box-shadow: 0 0 0 1px rgba(94, 17, 4, 0.8);
+}
+
+.btn-secondary {
+    background: #d1c791;
+    color: #5E1104;
+    border: solid 1px #5E1104;
+}
+
+.btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover {
+    background: #5E1104 !important;
+    color: #d1c791 !important;
+    border: solid 1px #5E1104 !important;
+}
+
+.btn-primary {
+    background: #5E1104;
+    color: #d1c791 !important;
+    border: none;
+}
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+    background: #d1c791 !important;
+    color: #5E1104 !important;
+    border: solid 1px #5E1104 !important;
+}
+
+.btn-close {
+    box-shadow: none !important;
+}
