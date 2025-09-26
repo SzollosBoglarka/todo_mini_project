@@ -45,7 +45,11 @@ header div *{
 
 #search_group > *{
     margin: 0.5em 0.5em;
+}
 
+#status_counter{
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 /* COLORING BY PRIORITY */
@@ -116,4 +120,19 @@ a:active {
 .dropdown-item:hover {
     color: #d1c791;
     background-color: #5E1104;
+}
+
+#user-nickname{
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+
+#task_manager_group{
+    border: 5px dotted #A09E57;
+    margin: 0 auto 1.5em auto;
+    width: 80%;
+    border-radius: 1em;
+    align-content: center;
+
 }

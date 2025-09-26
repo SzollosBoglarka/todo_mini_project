@@ -21,75 +21,78 @@
         <button id="logout-btn" class="btn">Kijelentkezés</button>
     </a>
 </header>
+<div id="task_manager_group">
+    <div id="task_trackers">
+        <div id="status_counter">
+            <p>új: <span id="new_status_counter">  </span></p>
+            <p>folyamatban: <span id="in_progress_status_counter"> </span></p>
+            <p>kész: <span id="done_status_counter"> </span></p>
+        </div>
 
-<div id="task_trackers">
-    <div id="status_counter">
-        <p>új: <span id="new_status_counter">  </span></p>
-        <p>folyamatban: <span id="in_progress_status_counter"> </span></p>
-        <p>kész: <span id="done_status_counter"> </span></p>
-    </div>
-
-    <button class="btn" data-bs-toggle="modal" data-bs-target="#taskModal" id="new-task-btn">+ Új feladat létrehozása
-    </button>
-
-</div>
-
-<div id="search_group">
-    <input id="searchInput" type="text" class="form-control search-input w-50" placeholder=" &#128270   Keresés...">
-
-    <div class="dropdown">
-        <button class="btn dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown">Kategória
+        <button class="btn" data-bs-toggle="modal" data-bs-target="#taskModal" id="new-task-btn">+ Új feladat
+            létrehozása
         </button>
-        <ul class="dropdown-menu">
-            <li>
-                <button class="dropdown-item category-filter" data-category="kategória">Kategória</button>
-            </li>
-            <li>
-                <button class="dropdown-item category-filter" data-category="személyes">Személyes</button>
-            </li>
-            <li>
-                <button class="dropdown-item category-filter" data-category="munka">Munka</button>
-            </li>
-            <li>
-                <button class="dropdown-item category-filter" data-category="iskola">Iskola</button>
-            </li>
-            <li>
-                <button class="dropdown-item category-filter" data-category="háztartás">Háztartás</button>
-            </li>
-            <li>
-                <button class="dropdown-item category-filter" data-category="egészség">Egészség</button>
-            </li>
-            <li>
-                <button class="dropdown-item category-filter" data-category="szabadidő">Szabadidő</button>
-            </li>
-        </ul>
+
     </div>
 
-    <div class="dropdown">
-        <button class="btn dropdown-toggle" type="button" id="priorityDropdown" data-bs-toggle="dropdown">
-            Prioritás
-        </button>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item priority-filter" data-priority="prioritás">Prioritás</a></li>
-            <li><a class="dropdown-item priority-filter" data-priority="magas">Magas</a></li>
-            <li><a class="dropdown-item priority-filter" data-priority="közepes">Közepes</a></li>
-            <li><a class="dropdown-item priority-filter" data-priority="alacsony">Alacsony</a></li>
-        </ul>
+    <div id="search_group">
+        <input id="searchInput" type="text" class="form-control search-input w-50" placeholder=" &#128270   Keresés...">
+
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown">Kategória
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <button class="dropdown-item category-filter" data-category="kategória">Kategória</button>
+                </li>
+                <li>
+                    <button class="dropdown-item category-filter" data-category="személyes">Személyes</button>
+                </li>
+                <li>
+                    <button class="dropdown-item category-filter" data-category="munka">Munka</button>
+                </li>
+                <li>
+                    <button class="dropdown-item category-filter" data-category="iskola">Iskola</button>
+                </li>
+                <li>
+                    <button class="dropdown-item category-filter" data-category="háztartás">Háztartás</button>
+                </li>
+                <li>
+                    <button class="dropdown-item category-filter" data-category="egészség">Egészség</button>
+                </li>
+                <li>
+                    <button class="dropdown-item category-filter" data-category="szabadidő">Szabadidő</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="priorityDropdown" data-bs-toggle="dropdown">
+                Prioritás
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item priority-filter" data-priority="prioritás">Prioritás</a></li>
+                <li><a class="dropdown-item priority-filter" data-priority="magas">Magas</a></li>
+                <li><a class="dropdown-item priority-filter" data-priority="közepes">Közepes</a></li>
+                <li><a class="dropdown-item priority-filter" data-priority="alacsony">Alacsony</a></li>
+            </ul>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="statusDropdown" data-bs-toggle="dropdown">
+                Státusz
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item status-filter" data-status="státusz">Státusz</a></li>
+                <li><a class="dropdown-item status-filter" data-status="új">Új</a></li>
+                <li><a class="dropdown-item status-filter" data-status="folyamatban">Folyamatban</a></li>
+                <li><a class="dropdown-item status-filter" data-status="kész">Kész</a></li>
+            </ul>
+        </div>
+
+        <button id="filterDelete" class="btn">Szűrők törlése</button>
     </div>
 
-    <div class="dropdown">
-        <button class="btn dropdown-toggle" type="button" id="statusDropdown" data-bs-toggle="dropdown">
-            Státusz
-        </button>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item status-filter" data-status="státusz">Státusz</a></li>
-            <li><a class="dropdown-item status-filter" data-status="új">Új</a></li>
-            <li><a class="dropdown-item status-filter" data-status="folyamatban">Folyamatban</a></li>
-            <li><a class="dropdown-item status-filter" data-status="kész">Kész</a></li>
-        </ul>
-    </div>
-
-    <button id="filterDelete" class="btn">Szűrők törlése</button>
 </div>
 
 <div id="table" class="table-responsive">
@@ -174,7 +177,7 @@
     </div>
 </div>
 
-<footer >
+<footer>
     <p>&copy; 2025 PlanBerry. All rights reserved.</p>
 </footer>
 

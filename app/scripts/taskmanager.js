@@ -43,8 +43,6 @@ let status = document.getElementById("task_status");
 
 // MODIFY TASK
 
-const saveBtn = document.getElementById("save-btn");
-
 let editingTaskId = null;
 
 const attachEditEvents = () => {
