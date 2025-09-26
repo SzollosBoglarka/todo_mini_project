@@ -1,7 +1,48 @@
+header, #task_trackers {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2em 0;
+}
+
+header div *{
+    text-align: center;
+}
+
+#status_counter{
+    display: flex;
+    justify-content: left;
+    margin: 1.5em 0;
+}
+
+#status_counter span{
+    margin-right: 3em;
+    margin-left: 0.5em;
+    background-color: #f3d8ce;
+    padding: 0.5em;
+    border-radius: 0.5em;
+}
+
 #search_group{
     display: flex;
-    margin-left:auto;
-    margin-right:auto;
-    width: 80%;
-    margin-bottom: 7vh;
+    margin: 0 auto 3em auto;
+    width: 70%;
+}
+
+#search_group > *{
+    margin-right: 1em;
+}
+
+/* COLORING BY PRIORITY */
+
+#taskManagerTable tbody tr[data-priority="Magas"] > td {
+    background-color: #f3d8ce !important;
+}
+
+#taskManagerTable tbody tr[data-priority="Közepes"] > td {
+    background-color: #7F8330 !important;
+}
+
+#taskManagerTable tbody tr[data-priority="Alacsony"] > td {
+    background-color: #d1c791 !important;
 }

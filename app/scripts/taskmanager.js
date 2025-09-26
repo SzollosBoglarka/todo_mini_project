@@ -17,7 +17,7 @@ window.onload = () => {
 
 const renderTaskRow = (task) => {
     return `
-        <tr>
+        <tr data-priority="${task.priority}">
             <td class="task_id">${task.id}</td>
             <td class="task_title">${task.title}</td>
             <td class="task_description">${task.description}</td>

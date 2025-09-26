@@ -12,17 +12,26 @@
 </head>
 <body>
 
-<h1>Hello, <span id="user-nickname"> </span>!</h1>
-<h2>Készen állsz, hogy leszüreteld a mai teendőidet?</h2>
+<header>
+    <div>
+        <h1>Hello, <span id="user-nickname"> </span>! Készen állsz, hogy leszüreteld a mai teendőidet?</h1>
+    </div>
 
-<a href="logout.html"><button id="logout-btn" class="btn">Kijelentkezés</button></a>
+    <a href="logout.html">
+        <button id="logout-btn" class="btn">Kijelentkezés</button>
+    </a>
+</header>
 
-<button class="btn" data-bs-toggle="modal" data-bs-target="#taskModal" id="new-task-btn">Új feladat</button>
 
-<div>
-    <p>új: <span id="new_status_counter">  </span></p>
-    <p>folyamatban: <span id="in_progress_status_counter"> </span></p>
-    <p>kész: <span id="done_status_counter"> </span></p>
+<div id="task_trackers">
+    <div id="status_counter">
+        <p>új: <span id="new_status_counter">  </span></p>
+        <p>folyamatban: <span id="in_progress_status_counter"> </span></p>
+        <p>kész: <span id="done_status_counter"> </span></p>
+    </div>
+
+    <button class="btn" data-bs-toggle="modal" data-bs-target="#taskModal" id="new-task-btn">+ Új feladat létrehozása</button>
+
 </div>
 
 <div id="search_group">
