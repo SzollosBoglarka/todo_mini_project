@@ -117,7 +117,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="taskModalLabel"></h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="setColorToDefault()"></button>
             </div>
             <div class="modal-body">
 
@@ -142,7 +142,7 @@
                 <input id="task_deadline" class="form-control" type="date"/>
 
                 <label for="task_priority">Prioritás</label>
-                <select id="task_priority" class="form-select">
+                <select id="task_priority" class="form-select" onchange="coloringBackground()">
                     <option selected></option>
                     <option value="Magas">Magas</option>
                     <option value="Közepes">Közepes</option>
@@ -159,8 +159,8 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
-                <button id="save-btn" type="button" class="btn btn-primary">Mentés</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="setColorToDefault()">Mégse</button>
+                <button id="save-btn" type="button" class="btn btn-primary" onclick="setColorToDefault()">Mentés</button>
             </div>
         </div>
     </div>

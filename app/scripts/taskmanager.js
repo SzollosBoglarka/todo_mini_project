@@ -69,6 +69,8 @@ const loadTaskIntoModal = (task) => {
     deadline.value = task.deadline;
     priority.value = task.priority;
     status.value = task.status;
+
+    coloringBackground();
 }
 
 if (saveBtn) {
@@ -319,7 +321,7 @@ function applyFilters() {
             row.style.display = "none";
         }
     });
-}
+};
 
 // SEARCH
 
@@ -377,7 +379,25 @@ document.querySelectorAll(".status-filter").forEach(item => {
 filterDelete.addEventListener("click", (e) => {
     window.location.reload();
     searchInput.value = "";
-})
+});
+
+// COLORING TASK_PRIORITY SELECT ITEM BACKGROUND
+
+const coloringBackground=()=>{
+    if(priority.value === "Magas"){
+        priority.style.backgroundColor = "#f3d8ce";
+    } else if(priority.value === "Közepes"){
+        priority.style.backgroundColor = "#7F8330";
+    }else if (priority.value === "Alacsony") {
+        priority.style.backgroundColor = "#d1c791";
+    } else{
+        priority.style.backgroundColor = "white";
+    }
+}
+
+const setColorToDefault=()=>{
+    priority.style.backgroundColor = "white";
+}
 
 
 // LOGOUT
@@ -386,7 +406,7 @@ const logoutBtn = document.getElementById("logout-btn");
 
 logoutBtn.addEventListener("click", () => {
     localStorage.removeItem("currentUser");
-})
+});
 
 // USER NICKNAME IN THE WELCOME TEXT
 
