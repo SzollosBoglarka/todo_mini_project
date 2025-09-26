@@ -92,3 +92,16 @@ a:active {
     color: #5E1104;
     opacity: 0.75;
 }
+
+.dropdown-menu {
+    background-color: #A09E57;
+}
+
+.dropdown-item {
+    color: #5E1104;
+}
+
+.dropdown-item:hover {
+    color: #d1c791;
+    background-color: #5E1104;
+}

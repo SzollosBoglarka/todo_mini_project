@@ -188,10 +188,22 @@ function attachDeleteEvents() {
             Swal.fire({
                 title: "Biztosan töröli szeretnéd ezt a feladatot?",
                 text: "Ez a művelet visszavonhatatlan!",
+                iconColor: "#5E1104",
                 icon: "warning",
+                background: "#d1c791",
+                color: "#5E1104",
+                confirmButtonColor: "#5E1104",
+                cancelButtonColor: "#A09E57",
                 showCancelButton: true,
                 confirmButtonText: "Igen, törlés!",
-                cancelButtonText: "Mégsem!"
+                cancelButtonText: "Mégsem!",
+                didOpen: () => {
+                    const confirmBtn = Swal.getConfirmButton();
+                    const cancelBtn = Swal.getCancelButton();
+
+                    confirmBtn.style.color = "#d1c791"; // fehér szöveg a megerősítő gombon
+                    cancelBtn.style.color = "#5E1104";  // fekete szöveg a mégsem gombon
+                }
             }).then((result) => {
                 if (result.isConfirmed) {
                     const new_tasks = tasks.filter(task => task.id !== taskId);
@@ -204,6 +216,9 @@ function attachDeleteEvents() {
                     Swal.fire({
                         title: "Törölve!",
                         text: "A feladat sikeresen törölve lett.",
+                        background: "#d1c791",
+                        color: "#5E1104",
+                        iconColor: "#7F8330",
                         icon: "success",
                         showConfirmButton: false
                     });
