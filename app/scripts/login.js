@@ -1,8 +1,6 @@
 const data = JSON.parse(localStorage.getItem("data")) || {users: []};
 const users = data.users;
 
-//console.log(users[0]);
-
 const form = document.querySelector(".needs-validation");
 
 if (form) {
@@ -50,4 +48,4 @@ const login = (userNickname) => {
 const removeInvalidSign = () =>{
     form.classList.remove("was-validated");
     form.reset();
-}
+};

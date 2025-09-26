@@ -13,7 +13,7 @@ window.onload = () => {
     attachEditEvents();
     attachDeleteEvents();
     status_counter(tasks);
-}
+};
 
 const renderTaskRow = (task) => {
     return `
@@ -31,7 +31,7 @@ const renderTaskRow = (task) => {
             </td>
         </tr>
     `;
-}
+};
 
 let title = document.getElementById("task_title");
 let description = document.getElementById("task_description");
@@ -53,7 +53,7 @@ const attachEditEvents = () => {
             loadTaskIntoModal(task);
         });
     });
-}
+};
 
 const loadTaskIntoModal = (task) => {
 
@@ -70,7 +70,7 @@ const loadTaskIntoModal = (task) => {
     status.value = task.status;
 
     coloringBackground();
-}
+};
 
 const form = document.querySelector(".needs-validation");
 
@@ -173,7 +173,7 @@ if (form) {
 const removeInvalidSign = () =>{
     form.classList.remove("was-validated");
     form.reset();
-}
+};
 
 // DELETE TASK
 
@@ -227,5 +227,4 @@ function attachDeleteEvents() {
             });
         })
     });
-
 }

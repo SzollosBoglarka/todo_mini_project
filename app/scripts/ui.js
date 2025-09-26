@@ -19,18 +19,17 @@ const status_counter = (tasks) => {
         }
     })
     set_status_count({news, in_progresses, dones});
-}
+};
 
 const set_status_count = (status) => {
     new_status.innerText = status.news;
     in_progress_status.innerText = status.in_progresses;
     done_status.innerText = status.dones;
-}
+};
 
 // COLORING TASK_PRIORITY SELECT ITEM BACKGROUND
 
 let priority = document.getElementById("task_priority");
-
 let modalBackground = document.getElementById("modal-content");
 
 const coloringBackground = () => {
@@ -43,11 +42,11 @@ const coloringBackground = () => {
     } else {
         modalBackground.style.backgroundColor = "#d1c791";
     }
-}
+};
 
 const setColorToDefault = () => {
     modalBackground.style.backgroundColor = "#d1c791";
-}
+};
 
 // USER NICKNAME IN THE WELCOME TEXT
 

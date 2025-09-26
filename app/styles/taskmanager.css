@@ -40,7 +40,8 @@ header div *{
     flex-wrap: wrap;
     margin: 0 auto 3em auto;
     width: 70%;
-    gap:0.1em
+    gap:0.1em;
+    justify-content: center;
 }
 
 #search_group > *{
@@ -50,20 +51,6 @@ header div *{
 #status_counter{
     font-size: 1.2em;
     font-weight: bold;
-}
-
-/* COLORING BY PRIORITY */
-
-#taskManagerTable tbody tr[data-priority="Magas"] > td {
-    background-color: #bd7880 !important;
-}
-
-#taskManagerTable tbody tr[data-priority="Közepes"] > td {
-    background-color: #A09E57 !important;
-}
-
-#taskManagerTable tbody tr[data-priority="Alacsony"] > td {
-    background-color: #f3d8ce !important;
 }
 
 .btn {
@@ -134,5 +121,18 @@ a:active {
     width: 80%;
     border-radius: 1em;
     align-content: center;
+}
 
+/* COLORING BY PRIORITY */
+
+#taskManagerTable tbody tr[data-priority="Magas"] > td {
+    background-color: #bd7880 !important;
+}
+
+#taskManagerTable tbody tr[data-priority="Közepes"] > td {
+    background-color: #A09E57 !important;
+}
+
+#taskManagerTable tbody tr[data-priority="Alacsony"] > td {
+    background-color: #f3d8ce !important;
 }

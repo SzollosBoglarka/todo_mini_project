@@ -1,9 +1,9 @@
 @import "login.css";
 
-.btn {
-    margin-top: 12em;
-}
-
 h2 {
     font-size: 3em;
+}
+
+#logo_div{
+    margin: 3.5em 0;
 }
