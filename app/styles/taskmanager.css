@@ -1,3 +1,9 @@
+@import "base.css";
+
+body {
+    font-size: 15px;
+}
+
 header, #task_trackers {
     display: flex;
     justify-content: space-around;
@@ -40,9 +46,48 @@ header div *{
 }
 
 #taskManagerTable tbody tr[data-priority="Közepes"] > td {
-    background-color: #7F8330 !important;
+    background-color: #A09E57 !important;
 }
 
 #taskManagerTable tbody tr[data-priority="Alacsony"] > td {
     background-color: #d1c791 !important;
+}
+
+.btn {
+    color: #5E1104;
+}
+
+#taskManagerTable th {
+    background-color: #5E1104 !important;
+    color: #d1c791;
+}
+
+#taskManagerTable tr {
+    border-bottom: 1px solid #5E1104;
+}
+
+#taskManagerTable td {
+    color: #5E1104;
+}
+
+a:active {
+    color: #5E1104;
+}
+
+#searchInput {
+    background: #A09E57;
+    color: #5E1104;
+    caret-color: #5E1104;
+    border: none;
+}
+
+#searchInput:focus {
+    background: rgba(243, 216, 206, 0.5);
+    color: #5E1104;
+    box-shadow: 0 0 0 1px rgba(94, 17, 4, 0.8);
+}
+
+#searchInput::placeholder {
+    color: #5E1104;
+    opacity: 0.75;
 }

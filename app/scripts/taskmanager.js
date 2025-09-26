@@ -387,7 +387,7 @@ const coloringBackground=()=>{
     if(priority.value === "Magas"){
         priority.style.backgroundColor = "#f3d8ce";
     } else if(priority.value === "Közepes"){
-        priority.style.backgroundColor = "#7F8330";
+        priority.style.backgroundColor = "#A09E57";
     }else if (priority.value === "Alacsony") {
         priority.style.backgroundColor = "#d1c791";
     } else{

@@ -1,0 +1,27 @@
+body {
+    background: #d1c791;
+    color: #5E1104;
+    font-family: Merriweather, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+::selection {
+    background: #5E1104;
+    color: #d1c791;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+.btn {
+    background: #7F8330;
+}
+
+.btn:hover {
+    color: #5E1104;
+    border: solid 1px #5E1104;
+}
