@@ -1,14 +1,25 @@
 const data = JSON.parse(localStorage.getItem("data")) || {users: []};
 const users = data.users;
 
-//console.log(users[0]);
+const form = document.querySelector(".needs-validation");
 
-const loginBtn = document.getElementById("login-btn");
+if (form) {
+    form.addEventListener("submit", (event) => {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+            form.classList.add("was-validated");
+            return;
+        }
+        event.preventDefault()
 
-if (loginBtn) {
-    loginBtn.addEventListener("click", (e) => {
-        currentUserNickname = document.getElementById("nickname").value
-        nicknameValidation(currentUserNickname)
+        let currentUserNickname = document.getElementById("nickname").value;
+        nicknameValidation(currentUserNickname);
+
+        window.location.href = "pages/taskmanager.html";
+
+        removeInvalidSign();
+
     })
 }
 
@@ -34,3 +45,7 @@ const login = (userNickname) => {
     localStorage.setItem("currentUser", userNickname);
 };
 
+const removeInvalidSign = () =>{
+    form.classList.remove("was-validated");
+    form.reset();
+};
