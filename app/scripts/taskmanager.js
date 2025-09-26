@@ -258,7 +258,7 @@ function sortTableByColumn(table, columnIndex, asc = true) {
 }
 
 document.querySelectorAll("#taskManagerTable th").forEach((headerCell, index) => {
-    if (index === 1 || index === 4) {
+    if (index === 0 || index === 1 || index === 4) {
         headerCell.style.cursor = "pointer";
         headerCell.addEventListener("click", () => {
             const tableElement = headerCell.closest("table");
