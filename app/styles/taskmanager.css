@@ -1,4 +1,5 @@
 @import "base.css";
+@import "modal.css";
 
 body {
     font-size: 15px;
@@ -42,7 +43,7 @@ header div *{
 /* COLORING BY PRIORITY */
 
 #taskManagerTable tbody tr[data-priority="Magas"] > td {
-    background-color: #f3d8ce !important;
+    background-color: #bd7880 !important;
 }
 
 #taskManagerTable tbody tr[data-priority="Közepes"] > td {
@@ -50,7 +51,7 @@ header div *{
 }
 
 #taskManagerTable tbody tr[data-priority="Alacsony"] > td {
-    background-color: #d1c791 !important;
+    background-color: #f3d8ce !important;
 }
 
 .btn {

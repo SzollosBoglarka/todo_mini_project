@@ -33,11 +33,11 @@ let priority = document.getElementById("task_priority");
 
 const coloringBackground = () => {
     if (priority.value === "Magas") {
-        priority.style.backgroundColor = "#f3d8ce";
+        priority.style.backgroundColor = "#bd7880";
     } else if (priority.value === "Közepes") {
         priority.style.backgroundColor = "#A09E57";
     } else if (priority.value === "Alacsony") {
-        priority.style.backgroundColor = "#d1c791";
+        priority.style.backgroundColor = "#f3d8ce";
     } else {
         priority.style.backgroundColor = "white";
     }

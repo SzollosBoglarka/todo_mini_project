@@ -1,0 +1,66 @@
+
+.modal-content {
+    background: #d1c791;
+    color: #5E1104;
+    border: none;
+}
+
+.form-control {
+    background: #A09E57;
+    color: #5E1104;
+    caret-color: #5E1104;
+    border: none;
+}
+
+.form-control:focus {
+    background: rgba(243, 216, 206, 0.5);
+    color: #5E1104;
+    box-shadow: 0 0 0 1px rgba(94, 17, 4, 0.8);
+}
+
+.modal-content::selection {
+    background: #5E1104;
+    color: #d1c791;
+}
+
+.modal-footer {
+    border: none;
+}
+
+.modal-header {
+    background: #5E1104;
+    color: #d1c791;
+    border: none;
+}
+
+.form-select {
+    background: #A09E57;
+    color: #5E1104;
+    caret-color: #5E1104;
+    border: none;
+}
+
+.form-select:focus {
+    box-shadow: 0 0 0 1px rgba(94, 17, 4, 0.8);
+}
+
+.btn-secondary {
+    background-color: #A09E57;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background: #d1c791;
+    color: #5E1104;
+    border: solid 1px #5E1104;
+}
+
+.btn-primary {
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #5E1104;
+    color: #d1c791;
+    border: solid 1px #5E1104;
+}
