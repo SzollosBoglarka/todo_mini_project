@@ -9,6 +9,9 @@
 ### Bejelentkező felület
 | ID | Név                      | Leírás                                                                                                                                                                                                                                     | Megfelelés |
 |----|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ----------- |
+|    | Becenév validálása | Becenév megadásának elmulasztása esetén a rendszer nem támogatja a továbblépést.<br/>Mező kitöltése esetén a továbbiakban a megadott névvel hivatkozik a felhasználóra | OK         |
+|    | Becenév mentése    | Az első bejelentkezést követően a becenév mentésre kerül a localStorage-ben a `currentUser` kulcs alá                                                                 | OK         |
+|    | Bejelentkezés      | Becenév megadása után a "Tovább" gomb a feladatkezelő oldalra navigál                                                                                                  | OK         |
 
 ### Feladat kezelő felület
 |  ID | Név | Leírás | Megfelelés |
