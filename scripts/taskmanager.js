@@ -25,7 +25,7 @@ const renderTaskRow = (task) => {
             <td class="task_deadline">${task.deadline}</td>
             <td class="task_priority">${task.priority}</td>
             <td class="task_status">${task.status}</td>
-            <td>
+            <td id="btn-group">
                 <button data-id="${task.id}" data-bs-toggle="modal" data-bs-target="#taskModal" class="btn edit">Szerkesztés</button>
                 <button data-id="${task.id}" class="btn delete-btn">Törlés</button>
             </td>

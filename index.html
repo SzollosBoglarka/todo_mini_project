@@ -7,31 +7,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PlanBerry</title>
     <link rel="shortcut icon" href="src/PlanBerryLogo.png" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/login.css">
 </head>
 <body>
-
+<div class="container">
     <img id="logo" src="src/PlanBerryLogo.png" height="150px" width="150px" alt="PlanBerryLogo">
 
     <h1>Üdvözlünk a <b><i id="appName">PlanBerry</i></b> weboldalán!</h1>
     <h2>Hogyan szólíthatunk?</h2>
 
-    <form class="needs-validation" novalidate >
+    <form class="needs-validation" novalidate>
 
         <div class="mb-3">
-            <label for="nickname" class="form-label">Becenév</label>
-            <input type="text" class="form-control" id="nickname" name="nickname" placeholder="Pl.: Pontos Panna" required>
+            <label for="nickname" class="form-label w-25">Becenév</label>
+            <input type="text" class="form-control w-25" id="nickname" name="nickname" placeholder="Pl.: Pontos Panna"
+                   required>
         </div>
 
-        <button id="login-btn" type="submit" class="btn">Tovább</button>
+        <button id="login-btn" type="submit" class="btn w-25">Tovább</button>
     </form>
+</div>
 
-    <footer>
-        <p>&copy; 2025 PlanBerry. All rights reserved.</p>
-    </footer>
+<footer>
+    <p>&copy; 2025 PlanBerry. All rights reserved.</p>
+</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="scripts/login.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+<script src="scripts/login.js"></script>
 </body>
 </html>

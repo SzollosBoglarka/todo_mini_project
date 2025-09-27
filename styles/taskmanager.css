@@ -23,8 +23,10 @@ header div *{
 
 #status_counter{
     display: flex;
-    justify-content: left;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 1.5em 0;
+
 }
 
 #status_counter span{
@@ -72,6 +74,8 @@ header div *{
 
 #taskManagerTable td {
     color: #5E1104;
+    vertical-align: center;
+    padding: 1.5em;
 }
 
 a:active {
@@ -121,6 +125,14 @@ a:active {
     width: 80%;
     border-radius: 1em;
     align-content: center;
+}
+
+#btn-group{
+    vertical-align: center;
+}
+
+#btn-group > button{
+    margin: 0.1em 0.1em;
 }
 
 /* COLORING BY PRIORITY */
