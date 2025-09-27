@@ -170,7 +170,7 @@ if (form) {
     });
 }
 
-const removeInvalidSign = () =>{
+window.removeInvalidSign = () =>{
     form.classList.remove("was-validated");
     form.reset();
 };
