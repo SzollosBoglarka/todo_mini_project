@@ -16,9 +16,12 @@
 ### Feladat kezelő felület
 |  ID | Név | Leírás | Megfelelés |
 |-----| ----------- | ----------- | ----------- |
+|    | Feladat hozzáadása        | Az "Új feladat létrehozása" gomb használatát követően egy modal ablak jelenik meg inputmezőket magábafoglalva.<br/>A kért információk megadása, majd a "Mentés" gombra való kattintás egy új feladatot csatol a felhasználó feladatlistájához.<br/>"Mégse" gomb használatával az új feladat terve elvetésre kerül | OK         |
+|    | Hozzáadás feltétele       | A szerkesztési ablakban megjelenő bármely beviteli mező üresen hagyása gátolja a mentést                                                                                                                                                                                                                          | OK         |
 |    | Feladat törlése          | A kijelölt feladat törlődik a felületről és a localStorage-ból is.                                                                                                                                                                         | OK |
 |    | Törlés megerősítés       | A feladat törlésénél egy SweetAlert ablak jelenik meg, ahol Törlés és Mégsem közül lehet választani. Törlés esetén törlődik a feladat a felületről és a localStorage-ból is. Mégsem esetén bezáródik a SweetAlert, és nem történik törlés. | OK |
 |    | Törlés utáni visszajelzés | Feladat törlés esetén megjelenik egy SweetAlert, ami jelzi, hogy sikeres volt a feladat törlése.                                                                                                                                           | OK |
+|    | Counter helyes működése   | Nyomonkövetve az új feladatok hozzáadását, illetve a meglévők állapotváltozását, a számláló mindig valós értéket mutat a feladatok státusz alapú számosságára nézve                                                                                                                                               |            |
 | | Keresés | A keresőmezőbe írt szöveg alapján módosul a megjelenített feladatok listája. Csak azok a feladatok jelennek meg, amelyekben szerepel az a kifejezés, amit a keresőbe írt a felhasználó. | OK |
 | | Kategória szűrő | A kategória szűrő listájából lehet választani egy kategóriát.  Csak a kiválasztott kategóriájú feladatok jelennek meg. | OK |
 | | Szűrők összehangolása | A különböző szűrők (kategória-, prioritás-, státuszszűrő és keresés) egymás utáni alkalmazásakor a szűrés a már szűrt feladatok listáján történik. | OK |
