@@ -38,3 +38,17 @@
 |  ID | Név                          | Leírás                                                                                                                           | Megfelelés |
 |-----|------------------------------|----------------------------------------------------------------------------------------------------------------------------------|------------|
 |     | Navigáció kijelentkezés után | A "Vissza a bejelentkező oldalra" lehetőségre kattintva visszatér a kezdőoldalra, ahol ismét a bejelentkezés lehetőségét kínálja | OK         |
+
+## Böngésző kompatibilitás teszt – Opera, Mozilla FireFox, Google Chrome
+
+| ID | Funkció                 | Leírás                                                                 | Megfelelés |
+|----|-------------------------|------------------------------------------------------------------------|------------|
+| B1 | Oldal betöltése         | Az alkalmazás hibamentesen betöltődik a böngészőkben                   | OK         |
+| B2 | Responsive design       | Mobil- és tablet-nézetben is jól jelenik meg                           | OK         |
+| B3 | Bejelentkezés           | Helyes adatokkal be lehet jelentkezni                                  | OK         |
+| B4 | Hibás login kezelése    | Hibás adatoknál megjelenik a hibaüzenet                                | OK         |
+| B5 | Feladat hozzáadása      | Új feladat sikeresen menthető, megjelenik a listában                   | OK         |
+| B6 | Feladat törlése         | Feladat törlése működik, és a localStorage-ból is eltűnik              | OK         |
+| B7 | Szűrés/keresés          | A kereső és szűrők megfelelően működnek a böngészőkben                 | OK         |
+| B8 | Feladatstátusz számláló | A feladatok státuszának számlálója megfelelően működnek a böngészőkben | OK         |
+| B9 | Kijelentkezés           | Kijelentkezés után a rendszer visszairányít a bejelentkező felületre   | OK         |
