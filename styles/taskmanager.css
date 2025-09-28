@@ -148,3 +148,19 @@ a:active {
 #taskManagerTable tbody tr[data-priority="Alacsony"] > td {
     background-color: #f3d8ce !important;
 }
+
+.search-input {
+    width: 100%;
+}
+
+@media (min-width: 400px) {
+    .search-input {
+        width: 75%;
+    }
+}
+
+@media (min-width: 700px) {
+    .search-input {
+        width: 50%;
+    }
+}

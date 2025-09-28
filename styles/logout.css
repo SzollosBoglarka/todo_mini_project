@@ -7,3 +7,25 @@ h2 {
 #logo_div{
     margin: 3.5em 0;
 }
+
+.btn {
+    width: 100%;
+}
+
+@media (min-width: 400px) {
+    .btn {
+        width: 75%;
+    }
+}
+
+@media (min-width: 700px) {
+    .btn {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .btn {
+        width: 25%;
+    }
+}
